@@ -1,33 +1,49 @@
 
-Tables: 
-    events:
-        id
-        event_name
-        event_location
-        artists (list of id's)
+        TABLES
 
- 
-    artists
-        id
-        artist name
+ ____________________        ____________________        ____________________             
+|        users       |      |     attendees      |      |        events      |            
+|____________________|      |____________________|      |____________________|            
+|       *id          |--\   |       *id          |   /--|------ *id          |            
+|       email        |   \--|-------fk user      |  /   |       title        |            
+|       password     |      |       fk event-----|-/    |       date         |            
+|       name         |      |       date         |      |       location     |            
+|       favArtists   |      |                    |      |                    |      
+|                    |      |                    |      |                    |      
+|____________________|      |____________________|      |____________________|      
 
-
-    users:
-        id
-        email
-        password
-        display_name
-        favoriteArtists (list of artist id's)
-        myEvents (list of event id's)
-
-
-
+ ____________________ 
+|       artists      |
+|____________________|
+|       *id          |
+|       atists_name  |
+|                    |
+|____________________|
 
     
-Routes:
+            ROUTES
 
-    POST new user
-
-    GET auth0 JWT user info
-
-    
+ ___________________ ___________ _______________________ ___________________
+|      PATH      	|  METHOD	|      DATA IN      	|     DATA OUT     	|
+|___________________|___________|_______________________|___________________|
+|                   |           |                       |                   |
+|   /api/events    	|   GET     |                   	|   events object   |  
+|   /api/events     |   POST    | name, location, date  |  confirmation     |
+|   /api/events    	|   PUT    	|                   	|                   |  
+|___________________|___________|_______________________|___________________|
+|                   |           |                       |                   |
+|   /api/user       |   POST    | email, password, name |   confirmation    |
+|   /api/user     	|   GET    	| email,              	|                   |
+|___________________|___________|_______________________|___________________|
+|                   |           |                       |                   |
+|   /api/feed     	|   GET   	|                   	| attendees object  |
+|   /api/feed      	|   POST  	| userID, eventID, date	|                  	|
+|___________________|___________|_______________________|___________________|
+|                                                                           |
+|             	HTML ROUTES                     HTML ROUTES                 |
+|___________________________________________________________________________|
+|                   |           |                       |                   |
+|   /  (root)       |   GET     |                       |                   |
+|   /home          	|   GET    	|                     	|                   |
+|   /profile       	|   GET    	|                     	|                   |
+|___________________|___________|_______________________|___________________|
