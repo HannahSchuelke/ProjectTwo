@@ -75,5 +75,6 @@ module.exports = function (app) {
             res.json(results);
         });
     });
+}
 
-// DESTROY, remove event from newsfeed
+// DESTROY, remove event from newsfeed,
