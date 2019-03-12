@@ -1,10 +1,14 @@
-# LIST'IN 
+# LIST!N 
 
-One Paragraph of project description goes here
+List!n is a portal where you can search for your favorite artists when they are in town. After you first login, you may add in shows you'd like to see and see what other shows have been added in that you would like to go to.
+
+<!-- One Paragraph of project description goes here -->
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+First, go to {{Heroku.oixxxx}} and on the left-hand side, login. If you have not already, you will have to create a username and password to login. After this is done, you will be redirected 
+
+<!-- These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system. -->
 
 ### Prerequisites
 
