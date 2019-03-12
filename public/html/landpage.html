@@ -4,7 +4,9 @@
   <title></title>
 
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <!-- main CSS -->
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
   <!-- jQuery Library -->
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <!-- bootstrap -->
@@ -12,19 +14,17 @@
 </head>
 <body>
             <!-- navbar -->
-            <!-- <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li style="float:right"><a class="active" href="#about"></a></li>
-                    <li style="float:right"><a class="active" href="#about">About</a></li>
-                  </ul> -->
                   <div class="topnav login-container">
-                        <a class="active" href="#home">LIST'EN</a>
+
+                        <a class="active" href="#home">LIST'IN</a>
+
+      
+
                           <form action="/action_page.php">
                             <input type="text" placeholder="Username" name="username">
                             <input type="text" placeholder="Password" name="psw">
-                            <button type="submit">Login</button>
+                            <button type="submit" class="login-btn" name="login">Login</button>
                           </form>
-                        </div>
                       </div>
 
         <div class="wrapper">
@@ -33,19 +33,22 @@
           </div>
           <div>
                 <form action="/action_page.php">
-                    <div class="container col-sm-6">
-                      <h1>Register</h1>
+                    <div class="container">
+                      <h1>Create an Account!</h1>
                       <p>Please fill in this form to create an account.</p>
                       <hr>
+                      <label for="name"><b>Name</b></label>
+                      <input type="text" placeholder="Enter Full Name" name="name" required>
+                      <br>
                   
                       <label for="email"><b>Email</b></label>
                       <input type="text" placeholder="Enter Email" name="email" required>
                       <br>
                   
-                      <label for="psw"><b>Password</b></label>
+                      <label for="password"><b>Password</b></label>
                       <input type="password" placeholder="Enter Password" name="psw" required>
                       <br>
-                      <button type="submit" class="create-btn">Create!</button>
+                      <button type="submit" class="create-btn" name="create">Create!</button>
           </div>
         </div>
   <style>
@@ -126,7 +129,7 @@ div {
   min-height: 100px;
   display:block; 
   width: 100%; 
-  background: rgba(0,0,0,0.8);
+  background: black;
   border: 1px solid #fff;
 }
 
@@ -141,7 +144,7 @@ div {
     box-sizing: border-box;
     float: left;
     margin: 0 16px;
-    height: 500px;
+    height: 700px;
 }
 
 body {
@@ -208,10 +211,39 @@ body {
         background-color: #f1f1f1;
         text-align: center;
     }
-    
   </style>
+
+  <script>
+    $("#sign-in-button").on("click", function() {
+        const body = {
+            username: $("#username-input").val(),
+            password: $("#password-input").val(),
+        }
+    $.ajax({
+            url: "/token",
+            data: body,
+            method: "post"
+        })
+        .then(function(response) {
+            console.warn("Got Data:",response);
+        });
+    });
+
+
+   $("#create-btn").on("click", function() {
+        console.log("what we typed", $("#create").val())
+        $.ajax({
+            url:"/api/user/new",
+            method: "post",
+            data: {name: $("#create").val()}
+        }).then(function(data) {
+            console.log("data we got back", data)
+            window.location.reload()
+        });
+</script>
   
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
   <script type="text/javascript" src="js/script.js"></script>
-</body>
+
+  </body>
 </html>
