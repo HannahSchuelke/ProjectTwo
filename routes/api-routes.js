@@ -10,6 +10,7 @@ module.exports = function (app) {
 
     // ------- USERS --------
 
+
     // POST, create a new user
     app.post("/api/new", function (req, res) {
         console.log(req.body);
@@ -20,18 +21,9 @@ module.exports = function (app) {
         }).then(function (results) {
             res.end();
         });
+
     });
 
-    // DESTROY, delete user (no longer needed, says Joe)
-    //   app.delete("/api/new/:id", function(req, res) {
-    //     db.User.destroy({
-    //       where: {
-    //         id: req.params.id
-    //       }
-    //     }).then(function(results) {
-    //       res.json(results);
-    //     });
-    //   });
 
     // --------- EVENTS ----------
 
@@ -118,5 +110,3 @@ module.exports = function (app) {
         });
     });
 }
-
-// DESTROY, remove event from newsfeed (no longer needed, says Joe)

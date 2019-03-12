@@ -21,7 +21,7 @@ module.exports = function(sequelize, DataTypes) {
       })
 
       User.associate = function(models) {
-        User.belongsToMany(Event, {through: 'Attendee'})
+        User.belongsToMany(models.Event, {through: 'Attendee'})
       };
 
       return User;

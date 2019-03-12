@@ -25,7 +25,7 @@ app.use(express.static('public'));
 require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
 
-//////////// SYNC SEQUELIZE AND USE EXPRESS APP (commented out for testing API)
+//////////// SYNC SEQUELIZE AND USE EXPRESS APP
 
 // db.sequelize.sync().then(function () {
 //     app.listen(PORT, function () {
