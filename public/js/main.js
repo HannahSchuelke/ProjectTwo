@@ -14,14 +14,14 @@ $(document).ready(function () {
   // create button and the text of buttons changing from the array --- for loop
   for (var i = 0; i < artistsInTown.length; i++) {
   var buttonTag = $("<button>").text(artistsInTown [i])
-  buttonTag.attr("class", "animalButton")
-  $(".button-container").prepend(buttonTag);
+//   buttonTag.attr("class", "animalButton")
+//   $(".button-container").prepend(buttonTag);
   }
   // creating for click handler to append a button for each string in the array
   // make a clickhander... so everytime I click the handler, the text of the button will send to the AJAX
-  $(".button-container").on("click", ".animalButton", function(event) {
-    var animals = $(this).text()
-    console.log("click")
+//   $(".button-container").on("click", ".animalButton", function(event) {
+//     var animals = $(this).text()
+//     console.log("click")
   
   // linking in AJAX
   var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + animals + "&api_key=aoLoR30pQOHgUwaOE5aBMZ4ukG6ShiZn";
