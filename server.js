@@ -20,13 +20,15 @@ app.use(express.static('public'));
 
 
 //tell express to use JSON WebTokens. JWT-Express will autofill req.user with the user details
-app.use(jwt_express({ secret: JWT_SECRET_KEY }).unless({ path: ['/token', '/favicon.ico'] }));
+// app.use(jwt_express({ secret: JWT_SECRET_KEY }).unless({ path: ['/token', '/favicon.ico'] }));
 
 
 /////////// ROUTES
 
-require("./routes/html-routes.js")(app);
-require("./routes/api-routes.js")(app);
+let htmlRoutes = require("./routes/html-routes.js");
+let apiRoutes = require("./routes/api-routes.js");
+app.use('/html', htmlRoutes)
+app.use('/api', apiRoutes)
 
 //////////// SYNC SEQUELIZE AND USE EXPRESS APP
 
