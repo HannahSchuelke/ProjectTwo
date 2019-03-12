@@ -1,7 +1,8 @@
 ////////// DEPENDENCIES
 
 var express = require('express');
-var jwt_express = requuire('express-jwt');
+var jwt_express = require('express-jwt');
+require("dotenv").config();
 
 ///////// INITIALIZE EXPRESS
 
@@ -31,10 +32,10 @@ require("./routes/api-routes.js")(app);
 
 db.sequelize.sync()
     .then(function () {
-        // return db.User.create({
-        //     username: TEST_USER.username,
-        //     password: TEST_USER.password
-        // })
+        return db.User.create({
+            username: TEST_USER.username,
+            password: TEST_USER.password
+        })
     })
     .then(function () {
         app.listen(PORT, function () {
