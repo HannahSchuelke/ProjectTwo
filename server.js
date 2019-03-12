@@ -1,7 +1,8 @@
 ////////// DEPENDENCIES
 
 var express = require('express');
-var jwt_express = requuire('express-jwt');
+var jwt_express = require('express-jwt');
+require("dotenv").config();
 
 ///////// INITIALIZE EXPRESS
 
