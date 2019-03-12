@@ -17,18 +17,22 @@ app.use(express.json());
 app.use(express.static('public'));
 
 
-// MODELS FOR SYNCING
-var db = require('./models');
+// MODELS FOR SYNCING (Commented out for testing API)
+// var db = require('./models');
 
 /////////// ROUTES
 
 require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
 
-//////////// SYNC SEQUELIZE AND USE EXPRESS APP
+//////////// SYNC SEQUELIZE AND USE EXPRESS APP (commented out for testing API)
 
-db.sequelize.sync().then(function () {
-    app.listen(PORT, function () {
-        console.log("App listening...")
-    })
+// db.sequelize.sync().then(function () {
+//     app.listen(PORT, function () {
+//         console.log("App listening...")
+//     })
+// })
+
+app.listen(PORT, function () {
+    console.log("App listening...")
 })

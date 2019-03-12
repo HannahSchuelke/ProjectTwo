@@ -1,7 +1,9 @@
 // This file is for routes: displaying and saving data to the db
 
-// Dependencies (grab the orm from the config)
-var db = require("../models");
+// Dependencies 
+// var db = require("../models"); //Comment back in later (testing API)
+const https = require("https");
+const axios = require("axios");
 
 // Routes
 module.exports = function (app) {
@@ -14,13 +16,13 @@ module.exports = function (app) {
         db.user.create({
             name: req.body.name,
             email: req.body.email,
-            password: req.body.password
+            password: req.body.password //authenication key = will store hash password, not string password. like encryption. 
         }).then(function (results) {
             res.end();
         });
     });
 
-    // DESTROY, delete user
+    // DESTROY, delete user (no longer needed, says Joe)
     //   app.delete("/api/new/:id", function(req, res) {
     //     db.User.destroy({
     //       where: {
@@ -59,6 +61,46 @@ module.exports = function (app) {
                 res.json(results);
             });
     });
+    // --------PREDICT HQ API (to search by area)------- (if song kick comes through -- boot this)
+
+    app.get("/api/predictHQ", async (req, res) => {
+        // const config = {
+        //     "Authorization": "0akqMCro5pKNYGxlIdwORyhdvUBntq"
+        // }       
+
+        const token = "0akqMCro5pKNYGxlIdwORyhdvUBntq";
+
+        const config = {
+            headers: { 'Authorization': "Bearer " + token }
+        }
+
+        // const agent = new https.Agent(config);
+
+        const url = "https://api.predicthq.com/v1/events/?place.scope=MSP"
+
+        try {
+            const predictHQData = await axios.get(url, config);
+
+            console.log(predictHQData.data.results);
+            const eventsInArea = predictHQData.data.results;
+
+            for (let i = 0; i < eventsInArea.length; i++) {
+                const artist = eventsInArea[i].title;
+
+                // --------BANDS IN TOWN API (to search by concert)-------
+
+                let bandInfo = await axios.get("https://rest.bandsintown.com/artists/" + artist + "/events?app_id=oisacfioqwuuwfcenqou");
+                bandInfo = bandInfo.data[0];
+
+                console.log("bandinfo: ", bandInfo);
+            }
+
+            // you might need to look into promise.all for async (may not work with for loop)
+            res.json("predictHQData")
+
+        } catch (error) {
+        }
+    })
 
     // ------- NEWSFEED ---------- 
 
@@ -77,4 +119,4 @@ module.exports = function (app) {
     });
 }
 
-// DESTROY, remove event from newsfeed,
+// DESTROY, remove event from newsfeed (no longer needed, says Joe)
