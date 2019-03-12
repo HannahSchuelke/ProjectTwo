@@ -4,8 +4,8 @@
 const router = require('express').Router();
 const jwt = require('jsonwebtoken');
 const db = require("../models");
-const https = require("https");
 const axios = require("axios");
+const dotenv = require('dotenv');
 
 // Routes
 
@@ -130,16 +130,25 @@ router.get("/api/predictHQ", async (req, res) => {
 // ------- NEWSFEED ---------- 
 
 // GET, add event & users (who are also going) to newsfeed
-router.get("/api/attendee/:id", function (req, res) {
-    // 2; Add a join to include all of the Author's Posts here
+router.get("/api/attendee/:event", function (req, res) {
     db.Attendee.findAll({
-        // can put include before or after the way, but not in where
         include: [{ model: db.attendee }],
         where: {
-            id: req.params.id
+            id: req.params.event
         }
     }).then(function (results) {
         res.json(results);
     });
 });
-}
+
+// GET events current user is attending
+router.get("api/attendee/:user", function(req, res) {
+    db.Attendee.findAll({
+        include: [{ model: db.attendee}],
+        where: {
+            UserID: req.params.user
+        }
+    }).then(function (results) {
+        res.json(results);
+    })
+})
