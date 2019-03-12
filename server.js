@@ -25,6 +25,7 @@ var db = require('./models');
 require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
 
+
 //////////// SYNC SEQUELIZE AND USE EXPRESS APP
 
 db.sequelize.sync().then(function () {
