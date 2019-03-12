@@ -16,9 +16,7 @@ router.post("/login", function(req, res) {
         where: {
             email: req.body.email
         }
-    })
-})
-    .then(function(result) {
+    }).then(function(result) {
         if (!result)  return  res.SendStatus(404).send();  //user wasn't found
 
         // check if user/password is correct
@@ -42,6 +40,7 @@ router.post("/login", function(req, res) {
     .catch(function(err) {
         return res.sendStatus(500).json(err)
     })
+})
 
 // POST, create a new user
 router.post("/user/new", function (req, res) {
@@ -60,14 +59,14 @@ router.post("/user/new", function (req, res) {
 // --------- EVENTS ----------
 
 // GET, all events
-router.get("/api/event", function (req, res) {
+router.get("/event", function (req, res) {
     db.Event.findAll({}).then(function (results) {
         res.json(results);
     });
 });
 
 // POST, new event
-router.post("/api/event", function (req, res) {
+router.post("/event", function (req, res) {
     db.Event.create(req.body).then(function (results) {
         res.redirect
         res.json(results);
@@ -75,7 +74,7 @@ router.post("/api/event", function (req, res) {
 });
 
 // PUT, for updating events
-router.put("/api/event", function (req, res) {
+router.put("/event", function (req, res) {
     db.Event.update(
         req.body,
         {
@@ -88,7 +87,7 @@ router.put("/api/event", function (req, res) {
 });
 // --------PREDICT HQ API (to search by area)------- (if song kick comes through -- boot this)
 
-router.get("/api/predictHQ", async (req, res) => {
+router.get("/predictHQ", async (req, res) => {
     // const config = {
     //     "Authorization": "0akqMCro5pKNYGxlIdwORyhdvUBntq"
     // }       
@@ -130,7 +129,7 @@ router.get("/api/predictHQ", async (req, res) => {
 // ------- NEWSFEED ---------- 
 
 // GET, add event & users (who are also going) to newsfeed
-router.get("/api/attendee/:event", function (req, res) {
+router.get("/attendee/:event", function (req, res) {
     db.Attendee.findAll({
         include: [{ model: db.attendee }],
         where: {
@@ -142,7 +141,7 @@ router.get("/api/attendee/:event", function (req, res) {
 });
 
 // GET events current user is attending
-router.get("api/attendee/:user", function(req, res) {
+router.get("/attendee/:user", function(req, res) {
     db.Attendee.findAll({
         include: [{ model: db.attendee}],
         where: {
