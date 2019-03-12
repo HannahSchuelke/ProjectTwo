@@ -31,10 +31,10 @@ require("./routes/api-routes.js")(app);
 
 db.sequelize.sync()
     .then(function () {
-        // return db.User.create({
-        //     username: TEST_USER.username,
-        //     password: TEST_USER.password
-        // })
+        return db.User.create({
+            username: TEST_USER.username,
+            password: TEST_USER.password
+        })
     })
     .then(function () {
         app.listen(PORT, function () {
