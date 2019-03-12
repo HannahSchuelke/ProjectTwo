@@ -9,7 +9,7 @@ module.exports = function (app) {
 // ------- USERS --------
 
 // POST, create a new user
-  app.post("/api/new", function(req, res) {
+  app.post("/api/user", function(req, res) {
     console.log(req.body);
     db.user.create({
       name: req.body.name,
@@ -21,7 +21,7 @@ module.exports = function (app) {
   });
 
 // DESTROY, delete user
-  app.delete("/api/new/:id", function(req, res) {
+  app.delete("/api/user/:id", function(req, res) {
     db.User.destroy({
       where: {
         id: req.params.id
@@ -76,5 +76,5 @@ app.get("/api/event", function(req, res) {
 // put/destroy, remove event from newsfeed
 
 
-
+  }
 
