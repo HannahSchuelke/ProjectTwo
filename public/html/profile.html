@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>LIST'IN</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" media="screen" href="/css/main.css" />
+<link rel="stylesheet" media="screen" href="../css/main.css" />
 
 
 <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
@@ -34,8 +34,8 @@
 <div class="row">
   <div class="col-xs-12">
     <div class="topcontent">
-    <img class="logo" src="img/logo.png">
-    <img class="profile" src="img/profile.png">
+    <img class="logo" src="../logo.png">
+    <img class="profile" src="../img/profile.png">
   </div>
 </div>
 </div>
@@ -79,6 +79,28 @@
                 </ul>
             </div>
         </div>
+
+        <script>
+          var queryURl = "/schema.sql";
+   
+          $("#user").on("load", function(){
+              const body = {
+                  email: $("#email").val(),
+                  name: $("#name").val(),
+                  password: $("#password").val()
+              }
+              $.ajax({
+                  url: queryURL,
+                  method: "POST"
+              })
+              .then(function(response){
+                  console.log(email, name, password)
+              })
+          });
+          </script>
+
+
+
         </body>
         </html>
 
