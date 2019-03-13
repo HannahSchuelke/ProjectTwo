@@ -168,4 +168,4 @@ router.get("/attendee/:user", function(req, res) {
     })
 })
 
-module.exports = router;
+module.exports = router
