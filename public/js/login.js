@@ -3,7 +3,7 @@
 $('#sign-in-button').on('click', function() {
     var body = {
         email: $('#email').val(),
-        password: $('password').val(),
+        password: $('#password').val(),
     }
     $.ajax({
         url: "/api/login",
@@ -12,9 +12,9 @@ $('#sign-in-button').on('click', function() {
     })
     .then(function(response) {
         localStorage.setItem(
-            token, response.token
+            'token', response.token
         )
-        location.window.href = "/profile";
+        location.href = "/profile";
     })
 });
 
@@ -32,9 +32,10 @@ $('#sign-up-button').on('click', function() {
         method: "post"
     })
     .then(function(response) {
+        console.log("RES:",response)
        localStorage.setItem(
            'token', response.token
        )
-       location.href = "/html/profile";
+       location.href = "/profile";
     })
 });
