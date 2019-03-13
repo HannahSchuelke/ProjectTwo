@@ -3,6 +3,7 @@
 var express = require('express');
 var jwt_express = require('express-jwt');
 require("dotenv").config();
+const db = require("./models");
 
 ///////// INITIALIZE EXPRESS
 
@@ -34,10 +35,10 @@ app.use('/api', apiRoutes)
 
 db.sequelize.sync()
     .then(function () {
-        return db.User.create({
-            username: TEST_USER.username,
-            password: TEST_USER.password
-        })
+        // return db.User.create({
+        //     username: TEST_USER.username,
+        //     password: TEST_USER.password
+        // })
     })
     .then(function () {
         app.listen(PORT, function () {
