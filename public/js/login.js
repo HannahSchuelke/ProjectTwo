@@ -19,23 +19,23 @@ $('#sign-in-button').on('click', function() {
 });
 
 $('#sign-up-button').on('click', function() {
-    console.log('new user clicked')
     var body = {
         email: $('#new-email').val(),
         password: $('#new-password').val(),
         name: $('#new-name').val(),
     }
-    console.log(body)
+    console.log("Sign up request sent...")
     $.ajax({
         url: "/api/user/new",
         data: body,
         method: "post"
     })
     .then(function(response) {
-        console.log("RES:",response)
        localStorage.setItem(
            'token', response.token
        )
+       if (!response.errors)
        location.href = "/profile";
+       else ($('#error').text(response.errors[0].message));
     })
 });
