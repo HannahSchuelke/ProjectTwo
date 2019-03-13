@@ -66,9 +66,9 @@ router.post("/user/new", function (req, res) {
                 token: token,
             })
         })
-        .catch(function(err) {
-            // res.json(err)
-        })
+    })
+    .catch(function(err) {
+        res.json(err)
     });
 
     // sign up ids name: new-name, email: new-email, password: new-password 
