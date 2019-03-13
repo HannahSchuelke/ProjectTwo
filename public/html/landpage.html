@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+<title>LIST!N TRACKER</title>
 
   
 
   <!-- main CSS -->
-  <link rel="stylesheet" type="text/css" href="/css/main.css">
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
   <!-- jQuery Library -->
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <!-- bootstrap -->
@@ -32,15 +32,12 @@
 
         <h1 class="formFontBold">Experience it live.</h1>
         <p class="formFont">Create an account today.</p>
-        
-
-        <input id='new-name' type="text" placeholder="Enter Full Name" name="name" required>
+      
+        <input type="text" placeholder="Enter Full Name" name="name" required>
         <br>
                   
-        
-        <input id='new-email' type="text" placeholder="Enter Email" name="email" required>
-        <br>
-                  
+        <input type="text" placeholder="Enter Email" name="email" required>
+        <br>         
         
         <input id='new-password' type="password" placeholder="Enter Password" name="psw" required>
         <br>
@@ -50,6 +47,38 @@
     </div>
   </div>
 </div>
+
+
+
+<script>
+    $("#sign-in-button").on("click", function() {
+        const body = {
+            username: $("#username-input").val(),
+            password: $("#password-input").val(),
+        }
+    $.ajax({
+            url: "/token",
+            data: body,
+            method: "post"
+        })
+        .then(function(response) {
+            console.warn("Got Data:",response);
+        });
+    });
+
+
+   $("#create-btn").on("click", function() {
+        console.log("what we typed", $("#create").val())
+        $.ajax({
+            url:"/api/user/new",
+            method: "post",
+            data: {name: $("#create").val()}
+        }).then(function(data) {
+            console.log("data we got back", data)
+            window.location.reload()
+        });
+      })
+  </script>
   
   <!-- <script type="text/javascript" src="js/bootstrap.min.js"></script> -->
   <script type="text/javascript" src="/js/main.js"></script>
