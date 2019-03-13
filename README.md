@@ -1,22 +1,24 @@
 # LIST!N 
 
-List!n is a portal where you can search for your favorite artists when they are in town. After you first login, you may add in shows you'd like to see and see what other shows have been added in that you would like to go to.
+LIST!N is an online portal where you can keep track of your favorite artists when they come to town. You may customize your profile and add artists that you would like to see. As more friends join and more shows get added, this information will serve as reminders by populating your newsfeed. 
 
-<!-- One Paragraph of project description goes here -->
+This is built using Node, Express, Sequelize, JSON Web Tokens, and a MVC Paradigm; for project two of UMN's Coding Bootcamp. 
+
+![](image.png)
 
 ## Getting Started
 
-First, go to {{Heroku.oixxxx}} and on the left-hand side, login. If you have not already, you will have to create a username and password to login. After this is done, you will be redirected 
+First, go to {{Heroku.oixxxx}} and on the left-hand side of the webpage, login. If you have not already, you will have to create a username and password to login. After this is done, you will be redirected 
 
 <!-- These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system. -->
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+<!-- What things you need to install the software and how to install them
 
 ```
 Give examples
-```
+``` -->
 
 ### Installing
 
