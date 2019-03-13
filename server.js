@@ -1,7 +1,6 @@
 ////////// DEPENDENCIES
 
 var express = require('express');
-var jwt_express = require('express-jwt');
 require("dotenv").config();
 const db = require("./models");
 
@@ -21,26 +20,18 @@ app.use(express.static('public'));
 
 console.log(process.env.JWT_SECRET_KEY)
 //tell express to use JSON WebTokens. JWT-Express will autofill req.user with the user details
-app.use(jwt_express({ secret: process.env.JWT_SECRET_KEY }).unless({ path: ['/token', '/favicon.ico'] }));
 
 
 
 /////////// ROUTES
 
-let htmlRoutes = require("./routes/html-routes.js");
+require("./routes/html-routes.js")(app);
 let apiRoutes = require("./routes/api-routes.js");
-app.use('/html', htmlRoutes)
 app.use('/api', apiRoutes)
 
 //////////// SYNC SEQUELIZE AND USE EXPRESS APP
 
 db.sequelize.sync()
-    .then(function () {
-        // return db.User.create({
-        //     username: TEST_USER.username,
-        //     password: TEST_USER.password
-        // })
-    })
     .then(function () {
         app.listen(PORT, function () {
             console.log("App listening...")

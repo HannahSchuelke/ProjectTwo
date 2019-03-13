@@ -7,6 +7,10 @@ const db = require("../models");
 const axios = require("axios");
 const dotenv = require('dotenv');
 
+var jwt_express = require('express-jwt');
+
+router.use(jwt_express({ secret: process.env.JWT_SECRET_KEY }).unless({ path: ['/api/login', '/favicon.ico', '/api/user/new'] }));
+
 // Routes
 
 // login users
@@ -44,14 +48,26 @@ router.post("/login", function(req, res) {
 
 // POST, create a new user
 router.post("/user/new", function (req, res) {
-    console.log(req.body);
-    db.user.create({
+    console.log('THE BODY: ', req);
+    db.User.create({
         name: req.body.name,
         email: req.body.email,
         password: req.body.password //authenication key = will store hash password, not string password. like encryption. 
     }).then(function (results) {
-        res.end();
+        let userDetails = {
+            email: results.email,
+            id: results.id,
+        };
+        return jwt.sign(userDetails, process.env.JWT_SECRET_KEY, {algorithm: "HS256"}, function(err, token) {
+            if (err) return res.sendStatus(500).json(err)
+            res.json({
+                user: userDetails,
+                token: token,
+            })
+        })
     });
+
+    // sign up ids name: new-name, email: new-email, password: new-password 
 
 });
 
