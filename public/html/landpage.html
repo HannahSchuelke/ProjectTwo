@@ -6,7 +6,7 @@
   
 
   <!-- main CSS -->
-  <link rel="stylesheet" type="text/css" href="../css/main.css">
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
   <!-- jQuery Library -->
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <!-- bootstrap -->
@@ -19,9 +19,9 @@
   <div class="topnav login-container">
     <a class="active" href="#home">LIST'IN</a>
     <form action="/action_page.php">
-    <input type="text" placeholder="Username" name="username">
-    <input type="text" placeholder="Password" name="psw">
-    <button type="submit" class="login-btn" name="login">Login</button>
+    <input type="text" placeholder="Email" id="email">
+    <input type="text" placeholder="Password" id="password">
+    <button type="submit" class="login-btn" id="sign-in-button">Login</button>
     </form>
   </div>
 
@@ -34,64 +34,24 @@
         <p class="formFont">Create an account today.</p>
         
 
-        <input type="text" placeholder="Enter Full Name" name="name" required>
+        <input id='new-name' type="text" placeholder="Enter Full Name" name="name" required>
         <br>
                   
         
-        <input type="text" placeholder="Enter Email" name="email" required>
+        <input id='new-email' type="text" placeholder="Enter Email" name="email" required>
         <br>
                   
         
-        <input type="password" placeholder="Enter Password" name="psw" required>
+        <input id='new-password' type="password" placeholder="Enter Password" name="psw" required>
         <br>
-        <button type="submit" class="create-btn" name="create">Sign Up</button>
+        <button id="sign-up-button" type="submit" class="create-btn" name="create">Sign Up</button>
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-  <script>
-    $("#sign-in-button").on("click", function() {
-        const body = {
-            username: $("#username-input").val(),
-            password: $("#password-input").val(),
-        }
-    $.ajax({
-            url: "/token",
-            data: body,
-            method: "post"
-        })
-        .then(function(response) {
-            console.warn("Got Data:",response);
-        });
-    });
-
-
-   $("#create-btn").on("click", function() {
-        console.log("what we typed", $("#create").val())
-        $.ajax({
-            url:"/api/user/new",
-            method: "post",
-            data: {name: $("#create").val()}
-        }).then(function(data) {
-            console.log("data we got back", data)
-            window.location.reload()
-        });
-      })
-  </script>
   
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="../js/main.js"></script>
+  <!-- <script type="text/javascript" src="js/bootstrap.min.js"></script> -->
+  <script type="text/javascript" src="/js/main.js"></script>
+  <script type="text/javascript" src="/js/login.js"></script>
 
   </body>
 </html>
