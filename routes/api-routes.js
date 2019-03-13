@@ -48,7 +48,6 @@ router.post("/login", function(req, res) {
 
 // POST, create a new user
 router.post("/user/new", function (req, res) {
-    console.log('THE BODY: ', req);
     db.User.create({
         name: req.body.name,
         email: req.body.email,
@@ -69,10 +68,7 @@ router.post("/user/new", function (req, res) {
     })
     .catch(function(err) {
         res.json(err)
-    });
-
-    // sign up ids name: new-name, email: new-email, password: new-password 
-
+    }); 
 });
 
 
