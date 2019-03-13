@@ -25,9 +25,9 @@ app.use(express.static('public'));
 
 /////////// ROUTES
 
-let htmlRoutes = require("./routes/html-routes.js");
+// let htmlRoutes = require("./routes/html-routes.js");
 let apiRoutes = require("./routes/api-routes.js");
-app.use('/html', htmlRoutes)
+// app.use('/html', htmlRoutes)
 app.use('/api', apiRoutes)
 
 //////////// SYNC SEQUELIZE AND USE EXPRESS APP

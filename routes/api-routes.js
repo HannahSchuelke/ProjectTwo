@@ -151,3 +151,5 @@ router.get("/attendee/:user", function(req, res) {
         res.json(results);
     })
 })
+
+module.exports = router
