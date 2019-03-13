@@ -34,7 +34,7 @@
 <div class="row">
   <div class="col-xs-12">
     <div class="topcontent">
-    <img class="logo" src="../img/logo.png">
+    <img class="logo" src="../logo.png">
     <img class="profile" src="../img/profile.png">
   </div>
 </div>
@@ -80,6 +80,7 @@
             </div>
         </div>
 
+<<<<<<< HEAD
         <script>
         var queryURl = "/models/user";
 
@@ -98,6 +99,50 @@
             })
         });
         </script>
+=======
+<<<<<<< HEAD
+        <script>
+          var queryURl = "/schema.sql";
+   
+          $("#user").on("load", function(){
+              const body = {
+                  email: $("#email").val(),
+                  name: $("#name").val(),
+                  password: $("#password").val()
+              }
+              $.ajax({
+                  url: queryURL,
+                  method: "POST"
+              })
+              .then(function(response){
+                  console.log(email, name, password)
+              })
+          });
+          </script>
+
+
+
+=======
+        <script src='/js/newEvent.js'></script>
+        
+>>>>>>> ef6eb3f2e78c0e098b737a6d1f4b8ce2b5ae1005
+>>>>>>> 95ba05504465b6818727f383f65b0c9bd888c0b8
         </body>
         </html>
 
+
+
+
+<!--
+  Modal for new event
+
+  ID's:
+
+    event-title
+    event-date
+    event-location
+    event-artist
+
+    new-event-button 
+
+-->
