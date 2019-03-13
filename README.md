@@ -8,7 +8,7 @@ This is built using Node, Express, Sequelize, JSON Web Tokens, and a MVC Paradig
 
 ## Getting Started
 
-First, go to https://git.heroku.com/project2listen.git and on the left-hand side of the webpage, login. If you have not done this already, you will be prompted to create a username and password, and then you will be redirected to your profile to personalize that if you like. After this is done, you will be redirected to your newsfeed, which will populate with customized data from your profile and other users. 
+First, go to https://project2listen.herokuapp.com/ and on the left-hand side of the webpage, login. If you have not done this already, you will be prompted to create a username and password, and then you will be redirected to your profile to personalize that if you like. After this is done, you will be redirected to your newsfeed, which will populate with customized data from your profile and other users. 
 
 ### Prerequisites
 
@@ -42,7 +42,7 @@ https://hannahschuelke.github.io/ProjectTwo/
 
 ## Deployment on Heroku
 
-https://git.heroku.com/project2listen.git
+https://project2listen.herokuapp.com/
 
 ## Built With
 
