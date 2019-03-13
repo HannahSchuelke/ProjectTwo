@@ -18,11 +18,9 @@
   <div class="background">
   <div class="topnav login-container">
     <a class="active" href="#home">LIST'IN</a>
-    <form action="/action_page.php">
     <input type="text" placeholder="Username" name="username">
     <input type="text" placeholder="Password" name="psw">
-    <button type="submit" class="login-btn" name="login">Login</button>
-    </form>
+    <button id ="login" type="submit" class="login-btn" name="login">Login</button>
   </div>
 
   
@@ -34,21 +32,20 @@
         <p class="formFont">Create an account today.</p>
         
 
-        <input type="text" placeholder="Enter Full Name" name="name" required>
+        <input id ="new-name" type="text" placeholder="Enter Full Name" name="name" required>
         <br>
                   
         
-        <input type="text" placeholder="Enter Email" name="email" required>
+        <input id = "new-email" type="text" placeholder="Enter Email" name="email" required>
         <br>
                   
         
-        <input type="password" placeholder="Enter Password" name="psw" required>
+        <input id= "new-password" type="password" placeholder="Enter Password" name="psw" required>
         <br>
         <button type="submit" class="create-btn" name="create">Sign Up</button>
     </div>
   </div>
 </div>
-
 
   <script>
     $("#sign-in-button").on("click", function() {
