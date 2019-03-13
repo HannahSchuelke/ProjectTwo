@@ -54,6 +54,7 @@ router.post("/user/new", function (req, res) {
         email: req.body.email,
         password: req.body.password //authenication key = will store hash password, not string password. like encryption. 
     }).then(function (results) {
+        console.log(results)
         let userDetails = {
             email: results.email,
             id: results.id,
@@ -64,6 +65,9 @@ router.post("/user/new", function (req, res) {
                 user: userDetails,
                 token: token,
             })
+        })
+        .catch(function(err) {
+            // res.json(err)
         })
     });
 
