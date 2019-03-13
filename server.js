@@ -23,19 +23,22 @@ console.log(process.env.JWT_SECRET_KEY)
 app.use(jwt_express({ secret: process.env.JWT_SECRET_KEY }).unless({ path: ['/token', '/favicon.ico'] }));
 
 
+
 /////////// ROUTES
 
-require("./routes/html-routes.js")(app);
-require("./routes/api-routes.js")(app);
+let htmlRoutes = require("./routes/html-routes.js");
+let apiRoutes = require("./routes/api-routes.js");
+app.use('/html', htmlRoutes)
+app.use('/api', apiRoutes)
 
 //////////// SYNC SEQUELIZE AND USE EXPRESS APP
 
 db.sequelize.sync()
     .then(function () {
-        // return db.User.create({
-        //     username: TEST_USER.username,
-        //     password: TEST_USER.password
-        // })
+        return db.User.create({
+            username: TEST_USER.username,
+            password: TEST_USER.password
+        })
     })
     .then(function () {
         app.listen(PORT, function () {

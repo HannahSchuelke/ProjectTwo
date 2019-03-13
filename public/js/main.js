@@ -1,3 +1,5 @@
+// only in our client-side logic (as this) do we make sure to add api routes
+
 $(document).ready(function() {
 
     var queryURL = "/api/events";
