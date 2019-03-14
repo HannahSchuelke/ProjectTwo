@@ -44,5 +44,7 @@ $('#sign-up-button').on('click', function() {
 
 $('#logout').on('click', function(){
     // clear local storage
+    localStorage.clear;
     // navigate to login page
+    location.href = "/"
 })
