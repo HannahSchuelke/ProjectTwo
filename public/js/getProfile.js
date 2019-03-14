@@ -22,6 +22,6 @@ $.ajax({
     method: "GET",
 })
 .then(function(response){
-    
+    $('#name').text(response.name);
+    $('#email').text(response.email);
 })
-
