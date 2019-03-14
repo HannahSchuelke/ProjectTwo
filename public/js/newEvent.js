@@ -8,7 +8,7 @@
 //   event-artist
 
 // post and create new event
-    <script type="text/javascript">
+    type="text/javascript">
     $(document).ready(function() {
         $('#insertForm').on('submit', function() {
             event.preventDefault();
@@ -29,9 +29,7 @@
                 alert("Artist is required");     
             }
         })
-    });
-
-    </script>    
+    });  
 
   $('#new-event-button ').on('click', function(){
     var body = {
