@@ -47,7 +47,7 @@
 <!--===================================================================-->
 
 <div class="col-xs-12">
-       <img class="altprofile" src="img/altprofile.png">
+       <img class="altprofile" src="../img/altprofile.png">
         </div>
         
         <div class="span8">
@@ -56,13 +56,18 @@
             <form id="eventContainer">
                 <button id="info">info</button>
 
-            <input id="email" type="text" value="email">
+            <input id="userInfo" type="text" value="email">
 
             <div id = "email"></div>
             <div id = "name"></div>
             <div id = "password"></div>
         </form>
+<<<<<<< HEAD
             <h6><a href="#">More... </a></h6>
+=======
+            
+            <h6><a href="#">Edit Profile Info</a></h6>
+>>>>>>> 924f1ae5baf5e370739c5f6513b5654e3a916629
         </div>
         
         <div class="span2">
@@ -78,6 +83,26 @@
             </div>
         </div>
 
+        <script>
+        var queryURl = "/models/user";
+
+        $("#userInfo").on("load", function(){
+            const body = {
+                email: $("#email").val(),
+                name: $("#name").val(),
+                password: $("#password").val()
+            }
+            $.ajax({
+                url: queryURL,
+                method: "get"
+            })
+            .then(function(response){
+                console.log(email, name, password)
+            })
+        });
+        </script>
+=======
+<<<<<<< HEAD
         <script>
           var queryURl = "/schema.sql";
    
@@ -97,6 +122,16 @@
           });
           </script>
 
+<<<<<<< HEAD
+=======
+
+
+=======
+        <script src='/js/newEvent.js'></script>
+        
+>>>>>>> ef6eb3f2e78c0e098b737a6d1f4b8ce2b5ae1005
+>>>>>>> 95ba05504465b6818727f383f65b0c9bd888c0b8
+>>>>>>> 924f1ae5baf5e370739c5f6513b5654e3a916629
         </body>
         </html>
 
