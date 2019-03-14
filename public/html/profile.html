@@ -1,87 +1,112 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>LIST'IN</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>LIST!N</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" media="screen" href="../css/main.css" />
-
-
 <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <script src="js/jquery-1.11.0.min.js"></script>
-
-
-  
-  <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
-  <!--<link rel="stylesheet" media="screen" href="style.css" />
- 
-  
-  <script src = "main.js"></script>-->
-
-
-
-  
+<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+<!--<link rel="stylesheet" media="screen" href="style.css" />
+<script src = "main.js"></script>-->
 </head>
 
 <body>
 
-  
-
-
+<!--Nav-->
 <div class="row">
   <div class="col-xs-12">
     <div class="topcontent">
-    <img class="logo" src="../logo.png">
+    <img class="logo" src="../img/logo_black.png">
     <img class="profile" src="../img/profile.png">
   </div>
 </div>
 </div>
+<!--End Nav-->
 
 
-<!--===================================================================-->
+<!--Profile Container-->
+<div class="col-xs-6">
+    <img class="altprofile" src="../img/altprofile.png">
+    <!--****Started setup to edit profile info, but that's a nice-to-have we should worry about later<h6><a href="#">Edit Profile Info</a></h6>-->
+    <!--Trigger AJAX, get user info-->
+   
+   
+   
+   <!--<form id="eventContainer">
+        <input id="userInfo" type="text" value="email">
+        <input id="userInfo" type="text" value="name">
+        <div id = "email"></div>
+        <div id = "name"></div>
+        <div id = "password"></div>
+    </form>-->
 
-
-
-<div class="col-xs-12">
-       <img class="altprofile" src="../img/altprofile.png">
-        </div>
+    <!--AJAX response should show up here-->
+    <div id= "showresults"></div>
         
-        
-        <div class="span8">
-
-            <!--Trigger AJAX call-->
-            <form id="eventContainer">
-                <button id="info">info</button>
-
-            <input id="userInfo" type="text" value="email">
-
-
-            <div id = "email"></div>
-            <div id = "name"></div>
-            <div id = "password"></div>
-        </form>
-            
-            <h6><a href="#">Edit Profile Info</a></h6>
-        </div>
-        
-        <div class="span2">
+        <!--Started setup to edit profile info, but that's a nice-to-have we should worry about later
             <div class="btn-group">
                 <a class="btn dropdown-toggle btn-info" data-toggle="dropdown" href="#">
                     Update Profile 
                     <span class="icon-cog icon-white"></span><span class="caret"></span>
-                </a>
-                <ul class="dropdown-menu">
-                    <li><a href="#"><span class="icon-wrench"></span> Modify</a></li>
-                    <li><a href="#"><span class="icon-trash"></span> Delete</a></li>
-                </ul>
+                </a>-->
             </div>
         </div>
+    
+        
+        
+<div class="col-xs-6">
+<p>test</p>
 
-<<<<<<< HEAD
+</div>
+
+
+<!--<div class="footer"><p>footer</p>-->
+
+
+
         <script>
+            //This script is very ugly and is a work in progress. I'll get it there!!!
+
+            $('#showresults').load(function() {
+                $.ajax({
+                    url: "/model/user",
+                    data: {
+                        name: ('#name').val(),
+                        email: ('#email').val()
+                    },
+                    type: "GET",
+                    dataType: "html",
+                    success:  {
+                        $('#showresults').replaceWith($('showresults').html(data));
+                    },
+                    error: function( ) {
+                        console.log("no profile info available");
+                    },
+                    complete: function( xhr, status){
+
+                    }                })
+                }
+            })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         var queryURl = "/models/user";
 
         $("#userInfo").on("load", function(){
@@ -99,36 +124,12 @@
             })
         });
         </script>
-=======
-<<<<<<< HEAD
-        <script>
-          var queryURl = "/schema.sql";
-   
-          $("#user").on("load", function(){
-              const body = {
-                  email: $("#email").val(),
-                  name: $("#name").val(),
-                  password: $("#password").val()
-              }
-              $.ajax({
-                  url: queryURL,
-                  method: "POST"
-              })
-              .then(function(response){
-                  console.log(email, name, password)
-              })
-          });
-          </script>
-
-
-
-=======
-        <script src='/js/newEvent.js'></script>
-        
->>>>>>> ef6eb3f2e78c0e098b737a6d1f4b8ce2b5ae1005
->>>>>>> 95ba05504465b6818727f383f65b0c9bd888c0b8
-        </body>
+        <script src='/js/newEvent.js'></script></body>
         </html>
+        
+<!-- >>>>>>> ef6eb3f2e78c0e098b737a6d1f4b8ce2b5ae1005
+>>>>>>> 95ba05504465b6818727f383f65b0c9bd888c0b8-->
+        
 
 
 
