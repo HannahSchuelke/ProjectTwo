@@ -1,11 +1,5 @@
 /*============================Navigation======================================*/
 
-
-.topcontent {
-  background-color: black;
-  background-size: 100% 50%;
-}
-
 .logo {
   position: relative;
   margin-top: 50px;
@@ -17,70 +11,34 @@
   height: auto;
 }
 
-
-
-
-
-
-
-* {box-sizing: border-box;}
-
-.topnav {
-  overflow: hidden;
-  background-color: #e9e9e9;
-}
-
-.topnav a {
-  float: right;
+.logoLandingPage {
   display: block;
-  color: black;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
+  margin-left: auto;
+  margin-right: 100px;
+  margin-bottom: 50px;
+  width: 60%;
+  z-index: 3;
+  height: auto;
 }
 
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.topnav a.active {
-  background-color: #2196F3;
-  color: white;
-}
-
-.topnav .login-container {
+/*.topnav .login-container button {
   float: right;
-}
-
-.topnav input[type=text] {
-  padding: 6px;
-  margin-top: 8px;
-  font-size: 17px;
-  border: none;
-  width:120px;
-}
-
-.topnav .login-container button {
-  float: right;
+  font-family: 'Anton', sans-serif;
   padding: 6px 10px;
   margin-top: 8px;
   margin-right: 16px;
-  background-color: #555;
-  color: white;
+  border-radius: 30px;
+  background-color: transparent;
+  color: #ddd;
   font-size: 17px;
-  border: none;
+  border-radius: 10px;
   cursor: pointer;
-}
+}*/
 
-.topnav .login-container button:hover {
-  background-color: green;
-}
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 100px) {
   .topnav .login-container {
-    float: none;
+    float: right;
   }
   .topnav a, .topnav input[type=text], .topnav .login-container button {
     float: none;
@@ -88,10 +46,7 @@
     text-align: left;
     width: 100%;
     margin: 0;
-    padding: 14px;
-  }
-  .topnav input[type=text] {
-    border: 1px solid #ccc;  
+    padding: 5px;
   }
 }
 
@@ -109,9 +64,6 @@
     margin: 0 16px;
     height: 700px;
 }
-
-
-
 
 /*============================End Navigation======================================*/
 
@@ -134,9 +86,12 @@
 }
 
 .altprofile {
-  position: relative;
-  width: 18%;
-  float: right;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+ 
+ 
   
 }
 
@@ -152,13 +107,14 @@
 /* Stuff from landing page CSS*/
 
 .formFont {
+  text-align: center;
   font-family: 'Anton', sans-serif;
   color: white;
-  font-weight: lighter;
   font-size: 25px;
 }
 
 .formFontBold {
+  text-align: center;
   font-family: 'Anton', sans-serif;
   color: white;
   font-weight: bold;
@@ -167,6 +123,9 @@
 
 .background {
       background-image: url('../img/concert.png');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      
     }
 
 /* Full-width input fields */
@@ -176,45 +135,49 @@ input[type=text], input[type=password] {
   margin: 5px 0 22px 0;
   display: inline-block;
   background-color: transparent;
+  color: white;
   border-radius: 30px;
-  border: 1.5 px solidwhite;
+  border: 1px solidwhite;
     
     }
             
-    /*input[type=text]:focus, input[type=password]:focus {
+    input[type=text]:focus, input[type=password]:focus {
     background-color: none;
-    outline: #ddd;
-    }*/
-    
-    /* Overwrite default styles of hr */
-
-    
+    outline: white;
+    }
+   
     /* Set a style for the submit button */
     .create-btn {
-
-        
         border-radius: 30px;
-        background-color: white;
-        
+        background-color: #ddd;
         padding: 16px 20px;
         margin: 8px 0;
-        
         cursor: pointer;
         width: 300px;
-        opacity: 0.9;
     }
     
     .registerbtn:hover {
         opacity: 1;
     }
     
-    /* Add a blue text color to links */
-    a {
-        color: dodgerblue;
-    }
-    
     /* Set a grey background color and center the text of the "sign in" section */
     .signin {
+      color: white;
         background-color: white;
         text-align: center;
+    }
+
+
+
+    /*=============Footer==============*/
+
+    .footer {
+      margin-top: 100px;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+      background-color: black;
+      width: 100%;
+      height: 100px;
+      text-align: center;
     }
