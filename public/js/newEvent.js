@@ -1,5 +1,3 @@
-// Modal for new event
-
 // ID's:
 
 //   event-title
@@ -11,23 +9,6 @@
 $(document).ready(function() {
     $('#insertForm').on('submit', function() {
         event.preventDefault();
-        if($('#event-title').val() == '')
-        {
-            alert("Title is required");
-        }
-        else if($('#event-date').val() == '')
-        {
-            alert("Date is required");
-        }
-        else if($('#event-location').val() == '')
-        {
-            alert("Location is required");
-        }
-        else if($('#event-artist').val() == '')
-        {
-            alert("Artist is required");    
-        }
-        else {
           var body = {
             title: $('#event-title').val(),
             date: $('#event-date').val(),
@@ -44,6 +25,5 @@ $(document).ready(function() {
             modal.style.display = "none"
             location.href = "/profile"
         })
-        }
     })
 }); 
