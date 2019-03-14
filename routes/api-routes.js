@@ -71,21 +71,36 @@ router.post("/user/new", function (req, res) {
     }); 
 });
 
+
+
+
+
+
+
+
+
 // GET PROFILE INFO
 
 router.get("/profile", function(req, res) {
 
     let user = {
-        name: req.user.name,
-        email: req.user.email,
-        id: req.user.id
+        name:   req.user.name,
+        email:  req.user.email,
+        id:     req.user.id
     }
 
     res.json(user)
 
-
-
 })
+
+
+
+
+
+
+
+
+
 
 // --------- EVENTS ----------
 
