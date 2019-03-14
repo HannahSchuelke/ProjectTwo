@@ -73,13 +73,6 @@ router.post("/user/new", function (req, res) {
 });
 
 
-
-
-
-
-
-
-
 // GET PROFILE INFO
 
 router.get("/profile", function (req, res) {
@@ -93,14 +86,6 @@ router.get("/profile", function (req, res) {
     res.json(user)
 
 })
-
-
-
-
-
-
-
-
 
 
 // --------- EVENTS ----------
@@ -133,15 +118,15 @@ router.post("/event/new", function (req, res) {
         location: req.body.location,
         artist: req.body.artist,
     })
+        .then(function (event) {
+            return db.Attendee.create({
+                UserId: req.user.id,
+                EventId: event.dataValues.id
+            })
+        })
         .then(function (results) {
             console.log(results);
             res.json(results);
-        })
-        .then(function (results) {
-            db.Attendee.create({
-                UserId: req.user.id,
-                EventId: results.dataValues.id
-            })
         })
         .catch(function (err) {
             res.json(500, err)
@@ -228,7 +213,7 @@ router.get("/attendee/:event", function (req, res) {
     });
 });
 
-// GET events current user is attending
+// GET events current user is attending (for profile)
 router.get("/attendee/:user", function (req, res) {
     db.Attendee.findAll({
         include: [{ model: db.attendee }],
