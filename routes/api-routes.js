@@ -90,6 +90,20 @@ router.get("/profile", function (req, res) {
 
 // --------- EVENTS ----------
 
+
+// GET, one event
+router.get("/event/:id", function (req, res) {
+    db.Event.findOne({
+        where: {
+            id: req.params.id
+        }
+    })
+        .then(function (results) {
+            res.json(results);
+        });
+});
+
+
 // GET, all events
 router.get("/events", function (req, res) {
     db.Event.findAll({})
@@ -99,10 +113,10 @@ router.get("/events", function (req, res) {
 });
 
 // GET, MY events
-router.get("/event/user", function (req, res) {
-    db.Event.findAll({
+router.get("/events/user", function (req, res) {
+    db.Attendee.findAll({
         where: {
-            id: req.user.id
+            UserId: req.user.id
         }
     })
         .then(function (results) {

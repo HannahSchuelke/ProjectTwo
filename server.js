@@ -31,7 +31,7 @@ app.use('/api', apiRoutes)
 
 //////////// SYNC SEQUELIZE AND USE EXPRESS APP
 
-db.sequelize.sync()
+db.sequelize.sync({force:true})
     .then(function () {
         app.listen(PORT, function () {
             console.log("App listening...")
