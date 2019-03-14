@@ -74,12 +74,14 @@ router.post("/user/new", function (req, res) {
 // GET PROFILE INFO
 
 router.get("/profile", function(req, res) {
-    var dummy = {
-        name: 'Johnny Bravo',
-        email: 'heythereprettymama@aol.com'
 
+    let user = {
+        name: req.user.name,
+        email: req.user.email,
+        id: req.user.id
     }
-    res.json(dummy)
+
+    res.json(user)
 
 
 
