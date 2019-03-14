@@ -4,7 +4,7 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false
         },
-        eventDate: {
+        date: {
             type: DataTypes.DATEONLY,
             allowNull: false
         },

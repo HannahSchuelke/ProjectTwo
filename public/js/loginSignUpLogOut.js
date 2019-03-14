@@ -39,3 +39,10 @@ $('#sign-up-button').on('click', function() {
        else ($('#error').text(response.errors[0].message));
     })
 });
+
+
+
+$('#logout').on('click', function(){
+    // clear local storage
+    // navigate to login page
+})
