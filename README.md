@@ -8,7 +8,7 @@ This is built using Node, Express, Sequelize, JSON Web Tokens, and a MVC Paradig
 
 ## Getting Started
 
-First, go to {{Heroku.oixxxx}} and on the left-hand side of the webpage, login. If you have not done this already, you will be prompted to create a username and password, and then you will be redirected to your profile to personalize that if you like. After this is done, you will be redirected to your newsfeed, which will populate with customized data from your profile and other users. 
+First, go to https://project2listen.herokuapp.com/ and on the left-hand side of the webpage, login. If you have not done this already, you will be prompted to create a username and password, and then you will be redirected to your profile to personalize that if you like. After this is done, you will be redirected to your newsfeed, which will populate with customized data from your profile and other users. 
 
 ### Prerequisites
 
@@ -16,12 +16,13 @@ Using this web portal requires no installation, though you may want to have a ph
 
 ### How to use locally
 
-1. Download MAMP at https://www.mamp.info/en/downloads/, and click to start the server on its popup after install.
-2. Direct or `cd` yourself in terminal to a root folder where you'd like to test our project. 
-3. Go to https://github.com/HannahSchuelke/ProjectTwo and clone the repository, or type `git clone git@github.com:HannahSchuelke/ProjectTwo.git` into that same root folder.  
-4. Type `npm install` also into your terminal from the same folder. 
-5. Type `node server.js` into your terminal to start the server.
-6. Type "http://localhost:8080/" into the URL and you will be able to sign up or sign in and use our online portal intuitively. 
+1. Direct or `cd` yourself in terminal to a root folder where you'd like to test our project. 
+2. Go to https://github.com/HannahSchuelke/ProjectTwo and clone the repository, or type `git clone git@github.com:HannahSchuelke/ProjectTwo.git` into that same root folder.  
+3. Type `npm install` also into your terminal from the same folder. 
+4. Type `node server.js` into your terminal to start the server.
+5. Download MAMP at https://www.mamp.info/en/downloads/, and click to start the server on its popup after install.
+6. Download MySQL Workbench at https://dev.mysql.com/downloads/workbench/. Open it and copy/paste our schema.sql file into your workbench. Click to run the code by pressing the far left lightening bolt icon. 
+7. Type "http://localhost:8080/" into the URL and you will be able to sign up or sign in and use our online portal intuitively. 
 
 
 ### Notable Code Snippets
@@ -41,13 +42,14 @@ https://hannahschuelke.github.io/ProjectTwo/
 
 ## Deployment on Heroku
 
-!!!!
+https://project2listen.herokuapp.com/
 
 ## Built With
 
 * [Bootstrap](https://getbootstrap.com/docs/4.3/getting-started/download/) - The styling framework used
 * [npm install](https://docs.npmjs.com/cli/install) - Installs package.json and node.modules that app depends on
 * [MAMP](https://www.mamp.info/en/downloads/) - Needed to operate MySQL Workbench
+* [MySQL](https://dev.mysql.com/downloads/workbench/) - Needed to handle data
 
 ## Authors
 

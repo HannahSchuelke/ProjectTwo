@@ -8,5 +8,19 @@
 //   event-artist
 
   $('#new-event-button ').on('click', function(){
-
+    var body = {
+        title: $('#event-title').val(),
+        date: $('#event-date').val(),
+        location: $('#event-location').val(),
+        artist: $('#event-artist').val(),
+    }
+    $.ajax({
+        url: "/api/event/new",
+        data: body,
+        method: "post"
+    })
+    .then(function(response) {
+        // close modal
+        // refresh page
+    })
   });

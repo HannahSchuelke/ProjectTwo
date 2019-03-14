@@ -76,16 +76,45 @@ router.post("/user/new", function (req, res) {
 
 // GET, all events
 router.get("/event", function (req, res) {
-    db.Event.findAll({}).then(function (results) {
+    db.Event.findAll({})
+    .then(function (results) {
+        res.json(results);
+    });
+});
+
+// GET, MY events
+router.get("/event", function (req, res) {
+    db.Event.findAll({
+        where: {
+            id: req.user.id
+        }
+    })
+    .then(function (results) {
         res.json(results);
     });
 });
 
 // POST, new event
-router.post("/event", function (req, res) {
-    db.Event.create(req.body).then(function (results) {
-        res.redirect
-        res.json(results);
+router.post("/event/new", function (req, res) {
+    db.Event.create({
+        title: req.body.title,
+        title: req.body.date,
+        title: req.body.location,
+        title: req.body.artist,
+    })
+    .then(function (results) {
+        console.log(results)
+        // redirect to new attendee
+        return db.Attendee.create({
+            UserId: req.user.id,
+            EventId: results.id
+        })
+    })
+    .then(function(attendeeResult){
+
+    })
+    .catch(function(err){
+        res.sendStatus(500).json(err)
     });
 });
 
@@ -101,6 +130,19 @@ router.put("/event", function (req, res) {
             res.json(results);
         });
 });
+
+// POST new attendee (ADD THIS TO MY EVENTS BUTTON)
+router.post('/event/add', function(res, res) {
+    db.Attendee.create({
+        UserId: req.user.id,
+        EventId: ''
+    })
+})
+
+
+
+
+
 // --------PREDICT HQ API (to search by area)------- (if song kick comes through -- boot this)
 
 router.get("/predictHQ", async (req, res) => {
