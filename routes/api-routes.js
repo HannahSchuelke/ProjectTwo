@@ -51,7 +51,7 @@ router.post("/user/new", function (req, res) {
     db.User.create({
         name: req.body.name,
         email: req.body.email,
-        password: req.body.password //authenication key = will store hash password, not string password. like encryption. 
+        password: req.body.password 
     }).then(function (results) {
         console.log(results)
         let userDetails = {
@@ -71,11 +71,24 @@ router.post("/user/new", function (req, res) {
     }); 
 });
 
+// GET PROFILE INFO
+
+router.get("/profile", function(req, res) {
+    var dummy = {
+        name: 'Johnny Bravo',
+        email: 'heythereprettymama@aol.com'
+
+    }
+    res.json(dummy)
+
+
+
+})
 
 // --------- EVENTS ----------
 
 // GET, all events
-router.get("/event", function (req, res) {
+router.get("/events", function (req, res) {
     db.Event.findAll({})
     .then(function (results) {
         res.json(results);
@@ -83,7 +96,7 @@ router.get("/event", function (req, res) {
 });
 
 // GET, MY events
-router.get("/event", function (req, res) {
+router.get("/event/user", function (req, res) {
     db.Event.findAll({
         where: {
             id: req.user.id
@@ -98,9 +111,9 @@ router.get("/event", function (req, res) {
 router.post("/event/new", function (req, res) {
     db.Event.create({
         title: req.body.title,
-        title: req.body.date,
-        title: req.body.location,
-        title: req.body.artist,
+        date: req.body.date,
+        location: req.body.location,
+        artist: req.body.artist,
     })
     .then(function (results) {
         console.log(results)
