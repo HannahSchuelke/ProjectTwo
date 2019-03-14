@@ -7,7 +7,9 @@ function attachToken(token) {
     // the attachToken function adds the token to EVERY ajax request
     $.ajaxSetup({
         headers: {
-          Authorization: "Bearer " + token
+          Authorization: "Bearer " + localStorage.getItem('token')
         }
       });
 }
+
+attachToken();
