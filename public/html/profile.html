@@ -8,8 +8,7 @@
 <link rel="stylesheet" media="screen" href="../css/main.css" />
 <script src="js/jquery-1.11.0.min.js"></script>
 <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+
 <!--<link rel="stylesheet" media="screen" href="style.css" />
 <script src = "main.js"></script>-->
 </head>
@@ -76,7 +75,7 @@
 
             $('#showresults').load(function() {
                 $.ajax({
-                    url: "/models/user",
+                    url: "/api/profile",
                     data: {
                         name: ('#name').val(),
                         email: ('#email').val()
@@ -94,9 +93,13 @@
             )
         </script>
         
+        <!--Bootstrap JS-->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+        <!--New event script-->
+        <script src='/js/newEvent.js'></script>
+        </body>
         
-        
-        <script src='/js/newEvent.js'></script></body>
         </html>
         
 <!-- >>>>>>> ef6eb3f2e78c0e098b737a6d1f4b8ce2b5ae1005
