@@ -26,6 +26,7 @@ router.post("/login", function(req, res) {
         // check if user/password is correct
         else if (result.password === req.body.password) {
             let userDetails = {
+                name: result.name,
                 email: result.email,
                 id: result.id,
             };
