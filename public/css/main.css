@@ -7,7 +7,7 @@
   margin-left: 50px;
   margin-right: auto;
   width: 20%;
-  z-index: 3;
+  z-index: 1;
   height: auto;
 }
 
@@ -81,7 +81,7 @@
   margin-right: 30px;
   margin-left: auto;
   width: 7%;
-  z-index: 3;
+  z-index: 1;
   height: auto;
 }
 
