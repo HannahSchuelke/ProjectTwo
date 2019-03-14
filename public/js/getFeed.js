@@ -23,13 +23,9 @@ $.ajax({
 
 // FUNCTION FOR PROFILE EVENTS
 
-var body = {
-    UserId = ''
-}
-
 $.ajax({
     url: '/api/events/user',
-    data: body,
+    data: {userId: req.user.id},
     method: 'get'
 })
 .then(function(response){
@@ -47,3 +43,4 @@ $.ajax({
 
 
 // FUNCTION FOR PROFILE INFO
+
