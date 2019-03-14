@@ -22,26 +22,27 @@
   <!-- navbar -->
   <div class="background">
   <div class="topnav login-container">
-    <a class="active" href="#home">LIST'IN</a>
-    <form action="/action_page.php">
+    <!---- Commented this out because I'm not sure if we'll need this later?
+        <a class="active" href="#home">LIST'IN</a>-->
+    
     <input type="text" placeholder="Email" id="email">
     <input type="text" placeholder="Password" id="password">
     <button type="submit" class="login-btn" id="sign-in-button">Login</button>
-    </form>
   </div>
 
   
   <div class="wrapper">
       <div class="container">
+            <img class="logoLandingPage" src="../img/logo.png">
         
 
         <h1 class="formFontBold">Experience it live.</h1>
         <p class="formFont">Create an account today.</p>
       
-        <input type="text" placeholder="Enter Full Name" name="name" required>
+        <input id = "new-name" type="text" placeholder="Enter Full Name" name="name" required>
         <br>
                   
-        <input type="text" placeholder="Enter Email" name="email" required>
+        <input id = "new-email" type="text" placeholder="Enter Email" name="email" required>
         <br>         
         
         <input id='new-password' type="password" placeholder="Enter Password" name="psw" required>
