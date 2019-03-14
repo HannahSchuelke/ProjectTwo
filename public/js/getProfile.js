@@ -19,13 +19,9 @@ $.ajax({
 
 $.ajax({
     url: "/api/profile",
-    type: "GET",
-    dataType: "html",
-    success: function () {
-        $('#showresults').replaceWith($('showresults').html(data));
-    },
-    error: function () {
-        console.log("no profile info available");
-    },
+    method: "GET",
+})
+.then(function(response){
+    
 })
 

@@ -82,7 +82,7 @@ router.post("/user/new", function (req, res) {
 // GET PROFILE INFO
 
 router.get("/profile", function(req, res) {
-
+    console.log(req.user)
     let user = {
         name:   req.user.name,
         email:  req.user.email,
