@@ -7,6 +7,32 @@
 //   event-location
 //   event-artist
 
+// post and create new event
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('#insertForm').on('submit', function() {
+            event.preventDefault();
+            if($('#event-title').val() == '')
+            {
+                alert("Title is required");
+            }
+            else if($('#event-date').val() == '')
+            {
+                alert("Date is required");
+            }
+            else if($('#event-location').val() == '')
+            {
+                alert("Location is required");
+            }
+            else if($('#event-artist').val() == '')
+            {
+                alert("Artist is required");     
+            }
+        })
+    });
+
+    </script>    
+
   $('#new-event-button ').on('click', function(){
     var body = {
         title: $('#event-title').val(),
