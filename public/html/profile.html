@@ -6,9 +6,9 @@
 <title>LIST!N</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" media="screen" href="../css/main.css" />
+<script src="js/jquery-1.11.0.min.js"></script>
 <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-<script src="js/jquery-1.11.0.min.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
 <!--<link rel="stylesheet" media="screen" href="style.css" />
 <script src = "main.js"></script>-->
@@ -45,7 +45,10 @@
     </form>-->
 
     <!--AJAX response should show up here-->
-    <div id= "showresults"></div>
+    <div id= "showresults">
+        <p id = "name"></p>
+        <p id = "email"></p>
+    </div>
         
         <!--Started setup to edit profile info, but that's a nice-to-have we should worry about later
             <div class="btn-group">
@@ -73,57 +76,26 @@
 
             $('#showresults').load(function() {
                 $.ajax({
-                    url: "/model/user",
+                    url: "/models/user",
                     data: {
                         name: ('#name').val(),
                         email: ('#email').val()
                     },
                     type: "GET",
                     dataType: "html",
-                    success:  {
+                    success: function() {
                         $('#showresults').replaceWith($('showresults').html(data));
                     },
                     error: function( ) {
                         console.log("no profile info available");
                     },
-                    complete: function( xhr, status){
-
-                    }                })
+                    })
                 }
-            })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        var queryURl = "/models/user";
-
-        $("#userInfo").on("load", function(){
-            const body = {
-                email: $("#email").val(),
-                name: $("#name").val(),
-                password: $("#password").val()
-            }
-            $.ajax({
-                url: queryURL,
-                method: "get"
-            })
-            .then(function(response){
-                console.log(email, name, password)
-            })
-        });
+            )
         </script>
+        
+        
+        
         <script src='/js/newEvent.js'></script></body>
         </html>
         
