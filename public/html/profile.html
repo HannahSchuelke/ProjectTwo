@@ -1,41 +1,28 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>LIST!N</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- jQuery link -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!--Link bootstrap-->
   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+  <!--Link CSS-->
   <link rel="stylesheet" media="screen" href="/css/main.css" />
-
-<!-- css link -->
-    <link rel="stylesheet" media="screen" href="../css/main.css" />
-
-<!-- bootstrap min -->
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
-
-<!-- bootstrap link  -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-
+  <!-- fonts  -->
   <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
-  <!--<link rel="stylesheet" media="screen" href="style.css" />
-
-<-- jQuery link -->
-    <script src="js/jquery-1.11.0.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
-<!-- fonts  -->
-    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
-
- <!-- ajax min library -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css"> -->
 </head>
 
 
 
 <body>
 
-<!--navigation-->
+  <!--navigation-->
   <div class="row">
     <div class="col-xs-12">
       <div class="topcontent">
@@ -46,160 +33,105 @@
   </div>
   <!--end navigation-->
 
-<!--Begin Profile Div-->
-<div class="row"></div>
+  <!--Begin Profile Div-->
+  <div class="row"></div>
   <div class="col-xs-6">
     <img class="altprofile" src="../img/altprofile.png">
 
     <!--Trigger AJAX call to populate user information-->
     <form id="eventContainer">
-        <input id="imageUpload" type="file" 
-         name="profile_photo" placeholder="Photo" required="" capture>
+      <input id="imageUpload" type="file" name="profile_photo" placeholder="Photo" required="" capture>
     </form>
   </div>
 
 
- 
-    <!--AJAX response should show up here-->
-    <div id= "showresults">
-        <p id = "name"></p>
-        <p id = "email"></p>
-    </div>
-        
-        <!--Started setup to edit profile info, but that's a nice-to-have we should worry about later
+
+  <!--AJAX response should show up here-->
+  <div id="showresults">
+    <p id="name"></p>
+    <p id="email"></p>
+  </div>
+
+  <!--Started setup to edit profile info, but that's a nice-to-have we should worry about later
             <div class="btn-group">
                 <a class="btn dropdown-toggle btn-info" data-toggle="dropdown" href="#">
                     Update Profile 
                     <span class="icon-cog icon-white"></span><span class="caret"></span>
                 </a>-->
-            </div>
-        </div>
-    
-        
-        
-<div class="col-xs-6">
-<p>populate user events here</p>
-
-</div>
-
-
-<!--<div class="footer"><p>footer</p>-->
+  </div>
+  </div>
 
 
 
-        <script>
-            //This script is very ugly and is a work in progress. I'll get it there!!!
+  <div id='my-events' class="col-xs-6">
+    <p>You haven't added any events yet! Create a new event or add one from the Home page!</p>
 
-            $('#showresults').load(function() {
-                $.ajax({
-                    url: "/api/profile",
-                    data: {
-                        name: ('#name').val(),
-                        email: ('#email').val()
-                    },
-                    type: "GET",
-                    dataType: "html",
-                    success: function() {
-                        $('#showresults').replaceWith($('showresults').html(data));
-                    },
-                    error: function( ) {
-                        console.log("no profile info available");
-                    },
-                    })
-                }
-            )
-        </script>
+  </div>
 
+</body>
 
-       
-        <script src='/js/newEvent.js'></script>
-        
-        </body>
-        
-        <!--Bootstrap JS-->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-        <!--New event script-->
-        <script src='/js/newEvent.js'></script>
-        </body>
-        
-        </html>
-        
-<!-- >>>>>>> ef6eb3f2e78c0e098b737a6d1f4b8ce2b5ae1005
->>>>>>> 95ba05504465b6818727f383f65b0c9bd888c0b8-->
-        
-
-
-
-
-<!--
-  Modal for new event
-
-  ID's:
-
-    event-title
-    event-date
-    event-location
-    event-artist
-
-    new-event-button 
-
-=======
--->
 
 <style>
-    body {font-family: Arial, Helvetica, sans-serif;}
-    
-    /* Modal (background) */
-    .modal {
-      display: none; /* Hidden by default */
-      position: fixed; /* Stay in place */
-      z-index: 1; /* Sit on top */
-      padding-top: 100px; /* Location of the box */
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto; /* Enable scroll if needed */
-      background-color: black; /* Fallback color */
-      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    }
-    
-    /* Modal Content */
-    .modal-content {
-      background-color: #fefefe;
-      margin: auto;
-      padding: 20px;
-      border: 1px solid #888;
-      width: 80%;
-    }
-    
-    /* The Close Button */
-    .close {
-      color: #aaaaaa;
-      float: right;
-      font-size: 28px;
-      font-weight: bold;
-    }
-    
-    .close:hover,
-    .close:focus {
-      color: #000;
-      text-decoration: none;
-      cursor: pointer;
-    }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
 
-/* Update Avatar CSS */
-#imageUpload
-{
+  /* Modal (background) */
+  .modal {
     display: none;
-}
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: black;
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+  }
 
-#profileImage
-{
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
     cursor: pointer;
-}
+  }
 
-#profile-container {
+  /* Update Avatar CSS */
+  #imageUpload {
+    display: none;
+  }
+
+  #profileImage {
+    cursor: pointer;
+  }
+
+  #profile-container {
     width: 150px;
     height: 150px;
     overflow: hidden;
@@ -208,124 +140,85 @@
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
     border-radius: 50%;
-}
+  }
 
-#profile-container img {
+  #profile-container img {
     width: 150px;
     height: 150px;
-}
+  }
+</style>
+</head>
 
-    </style>
-    </head>
-    <body>
-    <hr>
-    
-    <button id="add-event">Add an event!</button>
-    <!-- The Modal -->
-    <div id="eventModal" class="modal">
-    
-      <!-- inside Modal -->
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>Add your event!</h2>
-        
-        <div class="modal-body">
-                <form role="form" method="POST" id="insertForm" action="">
-                  
-                  <div class="form-group">
-                    <label for="event-title">Event Name</label>
-                      <input type="email" class="form-control"
-                      id="event-title" placeholder="Event Title"/>
-                        </div>
-                  
-                  <div class="form-group">
-                        <label for="event-date">Event Date</label>
-                          <input type="date" class="form-control"
-                          id="event-date" placeholder="Event Date"/>
-                      </div>
-                      
-                  <div class="form-group">
-                        <label for="event-location">Event Location</label>
-                          <input type="location" class="form-control"
-                          id="event-location" placeholder="Event Location"/>
-                      </div>
-                    
-                  <div class="form-group">
-                        <label for="event-artist">Event Artist</label>
-                          <input type="artist" class="form-control"
-                          id="event-artist" placeholder="Event Artist"/>
-                    </div>  
-                      
-                  <button type="submit" id="new-event" class="btn btn-default">Add!</button>
-                </form>   
-            </div>
+<body>
+  <hr>
+
+  <button id="add-event">Add an event!</button>
+  <!-- The Modal -->
+  <div id="eventModal" class="modal">
+
+    <!-- inside Modal -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Add your event!</h2>
+
+      <div class="modal-body">
+        <form role="form" method="POST" id="insertForm" action="">
+
+          <div class="form-group">
+            <label for="event-title">Event Name</label>
+            <input type="email" class="form-control" id="event-title" placeholder="Event Title" />
+          </div>
+
+          <div class="form-group">
+            <label for="event-date">Event Date</label>
+            <input type="date" class="form-control" id="event-date" placeholder="Event Date" />
+          </div>
+
+          <div class="form-group">
+            <label for="event-location">Event Location</label>
+            <input type="location" class="form-control" id="event-location" placeholder="Event Location" />
+          </div>
+
+          <div class="form-group">
+            <label for="event-artist">Event Artist</label>
+            <input type="artist" class="form-control" id="event-artist" placeholder="Event Artist" />
+          </div>
+
+          <button type="submit" id="new-event" class="btn btn-default">Add!</button>
+        </form>
       </div>
-    
     </div>
-    
-    <script>
+
+  </div>
+
+  <script>
     var modal = document.getElementById('eventModal');
     // Get the button that opens the modal
     var btn = document.getElementById("add-event");
     var span = document.getElementsByClassName("close")[0];
-        btn.onclick = function() {
-            modal.style.display = "block";
+    btn.onclick = function () {
+      modal.style.display = "block";
     }
-        span.onclick = function() {
-            modal.style.display = "none";
+    span.onclick = function () {
+      modal.style.display = "none";
     }
-    
+
     // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
+    window.onclick = function (event) {
       if (event.target == modal) {
         modal.style.display = "none";
       }
     }
-    </script>
+  </script>
 
-    <!-- post and create new event -->
-    <script type="text/javascript">
-    $(document).ready(function() {
-        $('#insertForm').on('submit', function() {
-            event.preventDefault();
-            if($('#event-title').val() == '')
-            {
-                alert("Title is required");
-            }
-            else if($('#event-date').val() == '')
-            {
-                alert("Date is required");
-            }
-            else if($('#event-location').val() == '')
-            {
-                alert("Location is required");
-            }
-            else if($('#event-artist').val() == '')
-            {
-                alert("artist is required");     
-            }
-        })
-    })
-        $("#").click(function(event) {
-        event.preventDefault();
-        var name = $("#").val(); 
-        var last_name = $("").val();
-        var dataString = 'name='+name+'&last_name='+last_name;
-        $.ajax({
-            type:'POST',
-            data:dataString,
-            url:'/api/event/new',
-            success:function(data) {
-            alert(data);
-    }
-  });
-});
+  <!--Add authorization token to all requests-->
+  <script src='../js/auth.js'></script>
 
-    </script>   
-    
-    <!--Add authorization token to all requests-->
-<script src='../js/auth.js'></script>
+  <!-- post and create new event -->
+  <script src='../js/newEvent.js'></script>
 
-    </body>
-    </html>
 
+
+</body>
+
+</html>
