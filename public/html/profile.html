@@ -5,11 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>LIST!N</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
   <link rel="stylesheet" media="screen" href="/css/main.css" />
-
 
 <!-- css link -->
     <link rel="stylesheet" media="screen" href="../css/main.css" />
@@ -17,10 +14,8 @@
 <!-- bootstrap min -->
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
 
-
 <!-- bootstrap link  -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-
 
   <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
   <!--<link rel="stylesheet" media="screen" href="style.css" />
@@ -34,120 +29,37 @@
 
  <!-- ajax min library -->
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css"> -->
-  
-<meta charset="utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>LIST!N</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" media="screen" href="../css/main.css" />
-<script src="js/jquery-1.11.0.min.js"></script>
-<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
-
-<!--<link rel="stylesheet" media="screen" href="style.css" />
-
- 
-  <script src = "main.js"></script>-->
-
-
 </head>
+
+
 
 <body>
 
-
-
-
-
+<!--navigation-->
   <div class="row">
     <div class="col-xs-12">
       <div class="topcontent">
-        <img class="logo" src="img/logo.png">
-        <img class="profile" src="img/profile.png">
+        <img class="logo" src="../img/logo_black.png">
+        <img class="profile" src="../img/profile.png">
       </div>
     </div>
   </div>
+  <!--end navigation-->
 
+<!--Begin Profile Div-->
+<div class="row"></div>
+  <div class="col-xs-6">
+    <img class="altprofile" src="../img/altprofile.png">
 
-  <!--===================================================================-->
-
-
-
-  <div class="col-xs-12">
-    <img class="altprofile" src="img/altprofile.png">
-
-<div class="row">
-  <div class="col-xs-12">
-    <div class="topcontent">
-    <img class="logo" src="../img/logo_black.png">
-    <img class="profile" src="../img/profile.png">
-
-  </div>
-
-
-  <div class="span8">
-
-
-    <!--Trigger AJAX call-->
+    <!--Trigger AJAX call to populate user information-->
     <form id="eventContainer">
-      <button id="info">info</button>
-
-      <input id="email" type="text" value="email">
-
-
-<div class="col-xs-12">
-    <div id="profile-container">
-       <img class="altprofile" src="../img/altprofile.png">
-      </div>
-      <input id="imageUpload" type="file" 
-             name="profile_photo" placeholder="Photo" required="" capture>
-        
-        <div class="span8">
-
-
-      <div id="email"></div>
-      <div id="name"></div>
-      <div id="password"></div>
+        <input id="imageUpload" type="file" 
+         name="profile_photo" placeholder="Photo" required="" capture>
     </form>
-
-
-    <h6><a href="#">More... </a></h6>
   </div>
 
-  <div class="span2">
-    <div class="btn-group">
-      <a class="btn dropdown-toggle btn-info" data-toggle="dropdown" href="#">
-        Update Profile
-        <span class="icon-cog icon-white"></span><span class="caret"></span>
-      </a>
-      <ul class="dropdown-menu">
-        <li><a href="#"><span class="icon-wrench"></span> Modify</a></li>
-        <li><a href="#"><span class="icon-trash"></span> Delete</a></li>
-      </ul>
-    </div>
-  </div>
 
-  <!--Bootstrap JS-->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-  <script src="js/jquery-1.11.0.min.js"></script>
-  <!--Add Event Button Script-->
-  <script src='/js/newEvent.js'></script>
-
-</body>
-
-</html>
-
-            <input id="userInfo" type="text" value="email">
-
-            <div id = "email"></div>
-            <div id = "name"></div>
-            <div id = "password"></div>
-        </form>
-
-            <h6><a href="#">More... </a></h6>
-
-            
-            <h6><a href="#">Edit Profile Info</a></h6>
-
-        </div>
+ 
     <!--AJAX response should show up here-->
     <div id= "showresults">
         <p id = "name"></p>
@@ -166,7 +78,7 @@
         
         
 <div class="col-xs-6">
-<p>test</p>
+<p>populate user events here</p>
 
 </div>
 
@@ -199,37 +111,13 @@
         </script>
 
 
-        <script>
-          var queryURl = "/schema.sql";
-   
-          $("#user").on("load", function(){
-              const body = {
-                  email: $("#email").val(),
-                  name: $("#name").val(),
-                  password: $("#password").val()
-              }
-              $.ajax({
-                  url: queryURL,
-                  method: "POST"
-              })
-              .then(function(response){
-                  console.log(email, name, password)
-              })
-          });
-          </script>
-
-
-
-
-
-
+       
         <script src='/js/newEvent.js'></script>
         
         </body>
         
         <!--Bootstrap JS-->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-        <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
         <!--New event script-->
         <script src='/js/newEvent.js'></script>
         </body>
