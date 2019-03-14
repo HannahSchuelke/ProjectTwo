@@ -26,6 +26,7 @@ router.post("/login", function(req, res) {
         // check if user/password is correct
         else if (result.password === req.body.password) {
             let userDetails = {
+                name: result.name,
                 email: result.email,
                 id: result.id,
             };
@@ -71,21 +72,36 @@ router.post("/user/new", function (req, res) {
     }); 
 });
 
+
+
+
+
+
+
+
+
 // GET PROFILE INFO
 
 router.get("/profile", function(req, res) {
-
+    console.log(req.user)
     let user = {
-        name: req.user.name,
-        email: req.user.email,
-        id: req.user.id
+        name:   req.user.name,
+        email:  req.user.email,
+        id:     req.user.id
     }
 
     res.json(user)
 
-
-
 })
+
+
+
+
+
+
+
+
+
 
 // --------- EVENTS ----------
 

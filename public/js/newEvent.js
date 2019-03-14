@@ -25,7 +25,7 @@ $(document).ready(function() {
         }
         else if($('#event-artist').val() == '')
         {
-            alert("Artist is required");     
+            alert("Artist is required");    
         }
         else {
           var body = {
