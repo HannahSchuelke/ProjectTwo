@@ -1,53 +1,78 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>LIST!N</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" media="screen" href="../css/main.css" />
-<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-<script src="js/jquery-1.11.0.min.js"></script>
-<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>LIST!N</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+  <link rel="stylesheet" media="screen" href="/css/main.css" />
+
+
+<!-- css link -->
+    <link rel="stylesheet" media="screen" href="../css/main.css" />
+
+<!-- bootstrap min -->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+
+
+<!-- bootstrap link  -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+
+  <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+  <!--<link rel="stylesheet" media="screen" href="style.css" />
+
+<-- jQuery link -->
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<!-- fonts  -->
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+
+ <!-- ajax min library -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css"> -->
+  
 <!--<link rel="stylesheet" media="screen" href="style.css" />
-<script src = "main.js"></script>-->
+
+ 
+  <script src = "main.js"></script>-->
+
+
 </head>
 
 <body>
 
-<!--Nav-->
+
+
+
+
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="topcontent">
+        <img class="logo" src="img/logo.png">
+        <img class="profile" src="img/profile.png">
+      </div>
+    </div>
+  </div>
+
+
+  <!--===================================================================-->
+
+
+
+  <div class="col-xs-12">
+    <img class="altprofile" src="img/altprofile.png">
+
 <div class="row">
   <div class="col-xs-12">
     <div class="topcontent">
     <img class="logo" src="../img/logo_black.png">
     <img class="profile" src="../img/profile.png">
+
   </div>
-</div>
-</div>
-<!--End Nav-->
-
-
-<!--Profile Container-->
-<div class="col-xs-6">
-    <img class="altprofile" src="../img/altprofile.png">
-    <!--****Started setup to edit profile info, but that's a nice-to-have we should worry about later<h6><a href="#">Edit Profile Info</a></h6>-->
-    <!--Trigger AJAX, get user info-->
-   
-   
-   
-   <!--<form id="eventContainer">
-        <input id="userInfo" type="text" value="email">
-        <input id="userInfo" type="text" value="name">
-        <div id = "email"></div>
-        <div id = "name"></div>
-        <div id = "password"></div>
-    </form>-->
-
-    <!--AJAX response should show up here-->
-    <div id= "showresults"></div>
-
-
 
 
   <div class="span8">
@@ -61,8 +86,11 @@
 
 
 <div class="col-xs-12">
-       <img class="altprofile" src="img/altprofile.png">
-        </div>
+    <div id="profile-container">
+       <img class="altprofile" src="../img/altprofile.png">
+      </div>
+      <input id="imageUpload" type="file" 
+             name="profile_photo" placeholder="Photo" required="" capture>
         
         <div class="span8">
 
@@ -99,7 +127,7 @@
 
 </html>
 
-            <input id="email" type="text" value="email">
+            <input id="userInfo" type="text" value="email">
 
             <div id = "email"></div>
             <div id = "name"></div>
@@ -108,12 +136,8 @@
 
             <h6><a href="#">More... </a></h6>
 
-
-            <h6><a href="#">More... </a></h6>
-
             
             <h6><a href="#">Edit Profile Info</a></h6>
-
 
         </div>
         
@@ -139,8 +163,6 @@
 
 
         <script>
-
-
             //This script is very ugly and is a work in progress. I'll get it there!!!
 
             $('#showresults').load(function() {
@@ -196,13 +218,9 @@
             })
         });
         </script>
-        <script src='/js/newEvent.js'></script></body>
-
-
 
 
         <script>
-
           var queryURl = "/schema.sql";
    
           $("#user").on("load", function(){
@@ -226,17 +244,14 @@
 
 
 
-
         <script src='/js/newEvent.js'></script>
         
-
         </body>
-
-
         </html>
         
+<!-- >>>>>>> ef6eb3f2e78c0e098b737a6d1f4b8ce2b5ae1005
+>>>>>>> 95ba05504465b6818727f383f65b0c9bd888c0b8-->
         
-
 
 
 <!--
@@ -251,6 +266,7 @@
 
     new-event-button 
 
+=======
 -->
 
 <style>
@@ -266,7 +282,7 @@
       top: 0;
       width: 100%;
       height: 100%;
-      overflow: auto; 
+      overflow: auto; /* Enable scroll if needed */
       background-color: black; /* Fallback color */
       background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
     }
@@ -294,6 +310,34 @@
       text-decoration: none;
       cursor: pointer;
     }
+
+/* Update Avatar CSS */
+#imageUpload
+{
+    display: none;
+}
+
+#profileImage
+{
+    cursor: pointer;
+}
+
+#profile-container {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+}
+
+#profile-container img {
+    width: 150px;
+    height: 150px;
+}
+
     </style>
     </head>
     <body>
@@ -335,7 +379,7 @@
                           id="event-artist" placeholder="Event Artist"/>
                     </div>  
                       
-                  <button type="submit" id="new-event-button" class="btn btn-default">Add!</button>
+                  <button type="submit" id="new-event" class="btn btn-default">Add!</button>
                 </form>   
             </div>
       </div>
@@ -361,6 +405,46 @@
       }
     }
     </script>
+
+    <!-- post and create new event -->
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('#insertForm').on('submit', function() {
+            event.preventDefault();
+            if($('#event-title').val() == '')
+            {
+                alert("Title is required");
+            }
+            else if($('#event-date').val() == '')
+            {
+                alert("Date is required");
+            }
+            else if($('#event-location').val() == '')
+            {
+                alert("Location is required");
+            }
+            else if($('#event-artist').val() == '')
+            {
+                alert("artist is required");     
+            }
+        })
+    })
+        $("#").click(function(event) {
+        event.preventDefault();
+        var name = $("#").val(); 
+        var last_name = $("").val();
+        var dataString = 'name='+name+'&last_name='+last_name;
+        $.ajax({
+            type:'POST',
+            data:dataString,
+            url:'/api/event/new',
+            success:function(data) {
+            alert(data);
+    }
+  });
+});
+
+    </script>    
 
     </body>
     </html>
