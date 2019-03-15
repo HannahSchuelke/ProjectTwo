@@ -9,9 +9,9 @@ $('#add-event').on('click', function () {
         data: body,
         method: 'post',
     })
-    .then(function(response){
-        
-    })
+        .then(function (response) {
+
+        })
 })
 
 

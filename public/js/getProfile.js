@@ -8,11 +8,11 @@ $.ajax({
     method: 'get'
 })
     .then(function (response) {
-        if(response.length) $('.populateMessage').text('')
+        if (response.length) $('.populateMessage').text('')
         console.log(response)
         for (i in response) {
             $.ajax({
-                url: '/api/event/'+response[i].EventId,
+                url: '/api/event/' + response[i].EventId,
                 method: 'get',
             })
                 .then(function (eventRes) {
@@ -36,8 +36,8 @@ $.ajax({
     url: "/api/profile",
     method: "GET",
 })
-.then(function(response){
-    console.log(response)
-    $('#name').text(response.name);
-    $('#email').text(response.email);
-})
+    .then(function (response) {
+        console.log(response)
+        $('#name').text(response.name);
+        $('#email').text(response.email);
+    })

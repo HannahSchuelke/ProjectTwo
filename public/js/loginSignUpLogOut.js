@@ -1,6 +1,6 @@
 // import { read } from "fs";
 
-$('#sign-in-button').on('click', function() {
+$('#sign-in-button').on('click', function () {
     var body = {
         email: $('#email').val(),
         password: $('#password').val(),
@@ -10,15 +10,15 @@ $('#sign-in-button').on('click', function() {
         data: body,
         method: "post"
     })
-    .then(function(response) {
-        localStorage.setItem(
-            'token', response.token
-        )
-        location.href = "/profile";
-    })
+        .then(function (response) {
+            localStorage.setItem(
+                'token', response.token
+            )
+            location.href = "/profile";
+        })
 });
 
-$('#sign-up-button').on('click', function() {
+$('#sign-up-button').on('click', function () {
     var body = {
         email: $('#new-email').val(),
         password: $('#new-password').val(),
@@ -30,19 +30,19 @@ $('#sign-up-button').on('click', function() {
         data: body,
         method: "post"
     })
-    .then(function(response) {
-       localStorage.setItem(
-           'token', response.token
-       )
-       if (!response.errors)
-       location.href = "/profile";
-       else ($('#error').text(response.errors[0].message));
-    })
+        .then(function (response) {
+            localStorage.setItem(
+                'token', response.token
+            )
+            if (!response.errors)
+                location.href = "/profile";
+            else ($('#error').text(response.errors[0].message));
+        })
 });
 
 
 
-$('#logout').on('click', function(){
+$('#logout').on('click', function () {
     // clear local storage
     localStorage.removeItem('token');
     // navigate to login page
