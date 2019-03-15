@@ -64,8 +64,8 @@
 
 
   <div id='my-events' class="col-xs-6">
-    <p>You haven't added any events yet! Create a new event or add one from the Home page!</p>
-
+    
+    <div id='userEvent'><p>You haven't added any events yet! Create a new event or add one from the Home page!</p></div>
   </div>
 
 </body>
@@ -160,32 +160,32 @@
     <div class="modal-content">
       <span class="close">&times;</span>
       <h2>Add your event!</h2>
-
+     
       <div class="modal-body">
-        <form role="form" method="POST" id="insertForm" action="">
 
+        <form role="form" id="insertForm">
           <div class="form-group">
-            <label for="event-title">Event Name</label>
-            <input type="title" class="form-control" id="event-title" placeholder="Event Title" />
+            <label for="title">Event Name</label>
+            <input type="title" class="form-control" id="title" placeholder="Event Title" />
           </div>
 
           <div class="form-group">
-            <label for="event-date">Event Date</label>
-            <input type="date" class="form-control" id="event-date" placeholder="Event Date" />
+            <label for="date">Event Date</label>
+            <input type="date" class="form-control" id="date" placeholder="Event Date" />
           </div>
 
           <div class="form-group">
-            <label for="event-location">Event Location</label>
-            <input type="location" class="form-control" id="event-location" placeholder="Event Location" />
+            <label for="location">Event Location</label>
+            <input type="location" class="form-control" id="location" placeholder="Event Location" />
           </div>
 
           <div class="form-group">
-            <label for="event-artist">Event Artist</label>
-            <input type="artist" class="form-control" id="event-artist" placeholder="Event Artist" />
+            <label for="artist">Event Artist</label>
+            <input type="artist" class="form-control" id="artist" placeholder="Event Artist" />
           </div>
-
-          <button type="submit" id="new-event" class="btn btn-default">Add!</button>
+          <button id='formSubmit' class="btn btn-default">Add!</button>
         </form>
+      
       </div>
     </div>
 
@@ -209,6 +209,7 @@
         modal.style.display = "none";
       }
     }
+
   </script>
 
   <!--Add authorization token to all requests-->
@@ -217,10 +218,13 @@
   <!-- post and create new event -->
   <script src='/js/newEvent.js'></script>
 
-    <!-- get profile info -->
-    <script src='/js/getProfile.js'></script>
+  <!-- get profile info -->
+  <script src='/js/getProfile.js'></script>
 
-    
+  <!-- logout button  -->
+  <script src='/js/loginSignUpLogOut.js'></script>
+
+
 
 
 </body>

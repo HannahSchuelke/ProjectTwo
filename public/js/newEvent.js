@@ -1,5 +1,3 @@
-// Modal for new event
-
 // ID's:
 
 //   event-title
@@ -9,41 +7,24 @@
 
 // post and create new event
 $(document).ready(function() {
-    $('#insertForm').on('submit', function() {
-        event.preventDefault();
-        if($('#event-title').val() == '')
-        {
-            alert("Title is required");
-        }
-        else if($('#event-date').val() == '')
-        {
-            alert("Date is required");
-        }
-        else if($('#event-location').val() == '')
-        {
-            alert("Location is required");
-        }
-        else if($('#event-artist').val() == '')
-        {
-            alert("Artist is required");    
-        }
-        else {
+    $('#formSubmit').on('click', function() {
           var body = {
-            title: $('#event-title').val(),
-            date: $('#event-date').val(),
-            location: $('#event-location').val(),
-            artist: $('#event-artist').val(),
+            title: $('#title').val(),
+            date: $('#date').val(),
+            location: $('#location').val(),
+            artist: $('#artist').val(),
         }
+        console.log("Body to be sent: " + body)
         $.ajax({
             url: "/api/event/new",
             data: body,
-            method: "post"
+            method: "post",
         })
         .then(function(response) {
+            console.log("Response"+response)
             // close modal
             modal.style.display = "none"
             location.href = "/profile"
         })
-        }
     })
 }); 
