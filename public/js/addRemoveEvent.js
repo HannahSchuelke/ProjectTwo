@@ -1,5 +1,3 @@
-
-
 $('#add-event').on('click', function () {
     let body = {
         eventId: this.val()
@@ -9,17 +7,10 @@ $('#add-event').on('click', function () {
         data: body,
         method: 'post',
     })
-    .then(function(response){
-        
-    })
+        .then(function (response) {
+
+        })
 })
 
-
-
-
-
 $('#not-going').on('click', function () {
-
-
-
 })

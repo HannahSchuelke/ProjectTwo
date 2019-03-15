@@ -72,7 +72,6 @@ router.post("/user/new", function (req, res) {
         });
 });
 
-
 // GET PROFILE INFO
 
 router.get("/profile", function (req, res) {
@@ -87,9 +86,7 @@ router.get("/profile", function (req, res) {
 
 })
 
-
 // --------- EVENTS ----------
-
 
 // GET, one event
 router.get("/event/:id", function (req, res) {
@@ -167,10 +164,6 @@ router.post('/event/add', function (res, res) {
         EventId: ''
     })
 })
-
-
-
-
 
 // // --------PREDICT HQ API (to search by area)------- (if song kick comes through -- boot this)
 

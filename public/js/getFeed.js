@@ -1,7 +1,3 @@
-
-
-
-
 // FUNCTION FOR ALL EVENTS
 
 $.ajax({

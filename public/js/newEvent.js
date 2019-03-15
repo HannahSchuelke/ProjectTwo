@@ -6,10 +6,10 @@
 //   event-artist
 
 // post and create new event
-$(document).ready(function() {
-    $('#insertForm').on('submit', function() {
+$(document).ready(function () {
+    $('#insertForm').on('submit', function () {
         event.preventDefault();
-          var body = {
+        var body = {
             title: $('#event-title').val(),
             date: $('#event-date').val(),
             location: $('#event-location').val(),
@@ -20,10 +20,10 @@ $(document).ready(function() {
             data: body,
             method: "post"
         })
-        .then(function(response) {
-            // close modal
-            modal.style.display = "none"
-            location.href = "/profile"
-        })
+            .then(function (response) {
+                // close modal
+                modal.style.display = "none"
+                location.href = "/profile"
+            })
     })
 }); 
