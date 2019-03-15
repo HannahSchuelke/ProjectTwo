@@ -8,7 +8,7 @@ $.ajax({
     method: 'get'
 })
     .then(function (response) {
-        if(response.length) $('#userEvent').text('')
+        if(response.length) $('.populateMessage').text('')
         console.log(response)
         for (i in response) {
             $.ajax({
@@ -16,7 +16,7 @@ $.ajax({
                 method: 'get',
             })
                 .then(function (eventRes) {
-                    $('#userEvent').append(
+                    $('#my-events').append(
                         `<div class='event'>
                             <div id='event-title' class='event-item'>${eventRes.title}</div>
                             <div id='event-date' class='event-item'>${eventRes.date}</div>
