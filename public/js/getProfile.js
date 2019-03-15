@@ -8,7 +8,7 @@ $.ajax({
     method: 'get'
 })
     .then(function (response) {
-        if(response.length) $('.populateMessage').text('')
+        if (response.length) $('.populateMessage').text('')
         console.log(response)
         for (i in response) {
             $.ajax({
