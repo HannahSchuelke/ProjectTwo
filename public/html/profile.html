@@ -160,36 +160,30 @@
     <div class="modal-content">
       <span class="close">&times;</span>
       <h2>Add your event!</h2>
-      
-      <!-- <input  id="title" placeholder="Event Title" />
-      <input  id="event-date" placeholder="Event Date" />
-      <input  id="event-location" placeholder="Event Location" />
-      <input id="event-artist" placeholder="Event Artist" /> -->
      
       <div class="modal-body">
 
         <form role="form" id="insertForm">
-
           <div class="form-group">
-            <label for="event-title">Event Name</label>
-            <input type="title" class="form-control" id="event-title" placeholder="Event Title" />
+            <label for="title">Event Name</label>
+            <input type="title" class="form-control" id="title" placeholder="Event Title" />
           </div>
 
           <div class="form-group">
-            <label for="event-date">Event Date</label>
-            <input type="date" class="form-control" id="event-date" placeholder="Event Date" />
+            <label for="date">Event Date</label>
+            <input type="date" class="form-control" id="date" placeholder="Event Date" />
           </div>
 
           <div class="form-group">
-            <label for="event-location">Event Location</label>
-            <input type="location" class="form-control" id="event-location" placeholder="Event Location" />
+            <label for="location">Event Location</label>
+            <input type="location" class="form-control" id="location" placeholder="Event Location" />
           </div>
 
           <div class="form-group">
-            <label for="event-artist">Event Artist</label>
-            <input type="artist" class="form-control" id="event-artist" placeholder="Event Artist" />
+            <label for="artist">Event Artist</label>
+            <input type="artist" class="form-control" id="artist" placeholder="Event Artist" />
           </div>
-          <button type='submit' class="btn btn-default">Add!</button>
+          <button id='formSubmit' class="btn btn-default">Add!</button>
         </form>
       
       </div>
