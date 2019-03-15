@@ -33,6 +33,10 @@ These code snippets come from api-routes.js and newEvent.js. They are examples o
 
 ![](public/img/codeSnippetTwo.png)
 
+### Error Handling
+
+If you try to sign up with an email that already exists, or a password that is too short, the database sends back an error and displays it to the DOM. 
+
 ## Repository on Github
 
 https://github.com/HannahSchuelke/ProjectTwo
