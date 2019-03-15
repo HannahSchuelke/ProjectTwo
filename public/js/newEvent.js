@@ -6,19 +6,19 @@
 //   event-artist
 
 // post and create new event
-$(document).ready(function () {
-    $('#insertForm').on('submit', function () {
-        event.preventDefault();
-        var body = {
-            title: $('#event-title').val(),
-            date: $('#event-date').val(),
-            location: $('#event-location').val(),
-            artist: $('#event-artist').val(),
+$(document).ready(function() {
+    $('#formSubmit').on('click', function() {
+          var body = {
+            title: $('#title').val(),
+            date: $('#date').val(),
+            location: $('#location').val(),
+            artist: $('#artist').val(),
         }
+        console.log("Body to be sent: " + body)
         $.ajax({
             url: "/api/event/new",
             data: body,
-            method: "post"
+            method: "post",
         })
             .then(function (response) {
                 // close modal

@@ -130,13 +130,13 @@ router.post("/event/new", function (req, res) {
         artist: req.body.artist,
     })
         .then(function (event) {
+            // create record in join table
             return db.Attendee.create({
                 UserId: req.user.id,
                 EventId: event.dataValues.id
             })
         })
         .then(function (results) {
-            console.log(results);
             res.json(results);
         })
         .catch(function (err) {
