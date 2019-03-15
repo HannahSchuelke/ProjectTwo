@@ -20,11 +20,10 @@ $(document).ready(function() {
             data: body,
             method: "post",
         })
-        .then(function(response) {
-            console.log("Response"+response)
-            // close modal
-            modal.style.display = "none"
-            location.href = "/profile"
-        })
+            .then(function (response) {
+                // close modal
+                modal.style.display = "none"
+                location.href = "/profile"
+            })
     })
 }); 
