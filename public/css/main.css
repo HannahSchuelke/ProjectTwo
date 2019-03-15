@@ -176,13 +176,30 @@ input[type=text], input[type=password] {
       margin-bottom: 50px;
     }
 
+    .title {
+      font-family: 'Source Sans Pro', sans-serif;
+      color: black;
+      font-weight: bold;
+      font-size: 50px;
+    }
 
-  
+    .date {
+      font-family: 'Source Sans Pro', sans-serif;
+      color: black;
+      font-size: 50px;
+    }
 
- 
+    .location {
+      font-family: 'Source Sans Pro', sans-serif;
+      color: black;
+      font-size: 50px;
+    }
 
-
-    
+    .artist {
+        font-family: 'Source Sans Pro', sans-serif;
+        color: black;
+        font-size: 50px;
+    }
 
 
 
