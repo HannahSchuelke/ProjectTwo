@@ -1,18 +1,18 @@
 # LIST!N 
 
-LIST!N is an online portal where you can keep track of your favorite artists when they come to town. You may customize your profile and add artists that you would like to see. As more friends join and more shows get added, this information will serve as reminders by populating your newsfeed. 
+LIST!N is an online portal where you can keep track of your favorite artists when they come to town. You may customize your profile and add shows that you would like to see. As more friends join and more shows get added, this information will serve as reminders by populating your newsfeed. 
 
 This is built using Node, Express, Sequelize, JSON Web Tokens, and a MVC Paradigm; for project two of UMN's Coding Bootcamp. 
 
-![](image.png)
+![](public/img/homePage.png)
 
 ## Getting Started
 
-First, go to https://project2listen.herokuapp.com/ and on the left-hand side of the webpage, login. If you have not done this already, you will be prompted to create a username and password, and then you will be redirected to your profile to personalize that if you like. After this is done, you will be redirected to your newsfeed, which will populate with customized data from your profile and other users. 
+First, go to https://project2listen.herokuapp.com/ and on the left-hand side of the webpage, login. If you have not done this already, you may create a username and password, and then you will be redirected to your profile to personalize that with shows you'd like to see. After this is done, you will be redirected to your newsfeed, which will populate with customized data from your profile and other users. 
 
 ### Prerequisites
 
-Using this web portal requires no installation, though you may want to have a photo saved locally and shows your like to see [or see again] in mind, in order to customize your profile and later generate your newsfeed. 
+Using this web portal requires no installation, though you may want to have shows in mind that you would like to see [or see again], in order to customize your profile and later generate your newsfeed. 
 
 ### How to use locally
 
@@ -27,11 +27,12 @@ Using this web portal requires no installation, though you may want to have a ph
 
 ### Notable Code Snippets
 
-<!-- Explain what these tests test and why
+These code snippets come from api-routes.js and newEvent.js. They are examples of a many to many relationship that we have in our Sequelize database, and how that updates itself through AJAX calls and CRUD operations. The many to many relationships bridge our users to the shows that they would like to see.
 
-```
-Give an example
-``` -->
+![](public/img/codeSnippet.png)
+
+![](public/img/codeSnippetTwo.png)
+
 ## Repository on Github
 
 https://github.com/HannahSchuelke/ProjectTwo
