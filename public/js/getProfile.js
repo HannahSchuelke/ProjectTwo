@@ -28,8 +28,6 @@ $.ajax({
         }
     })
 
-
-
 // FUNCTION FOR PROFILE INFO
 
 $.ajax({

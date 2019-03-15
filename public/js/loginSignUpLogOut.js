@@ -40,8 +40,6 @@ $('#sign-up-button').on('click', function () {
         })
 });
 
-
-
 $('#logout').on('click', function () {
     // clear local storage
     localStorage.removeItem('token');
