@@ -1,22 +1,30 @@
 // import { userInfo } from "os";
 
 // FUNCTION FOR PROFILE EVENTS
-console.log(localStorage.getItem(user.id))
+// console.log(localStorage.getItem(user.id))
 
 $.ajax({
-    url: '/api/events/'+localStorage.getItem(user.id),
+    url: '/api/events/user',
     method: 'get'
 })
     .then(function (response) {
+        if(response.length) $('#userEvent').text('')
+        console.log(response)
         for (i in response) {
-            $('#userEvent').append(
-                `<div class='event'>
-                    <div id='event-title' class='event-item'>${response[i].title}</div>
-                    <div id='event-date' class='event-item'>${response[i].date}</div>
-                    <div id='event-location' class='event-item'>${response[i].location}</div>
-                    <div id='event-artist' class='event-item'>${response[i].artist}</div>
-                </div>`
-            )
+            $.ajax({
+                url: '/api/event/'+response[i].EventId,
+                method: 'get',
+            })
+                .then(function (eventRes) {
+                    $('#userEvent').append(
+                        `<div class='event'>
+                            <div id='event-title' class='event-item'>${eventRes.title}</div>
+                            <div id='event-date' class='event-item'>${eventRes.date}</div>
+                            <div id='event-location' class='event-item'>${eventRes.location}</div>
+                            <div id='event-artist' class='event-item'>${eventRes.artist}</div>
+                        </div>`
+                    )
+                })
         }
     })
 
@@ -29,6 +37,7 @@ $.ajax({
     method: "GET",
 })
 .then(function(response){
+    console.log(response)
     $('#name').text(response.name);
     $('#email').text(response.email);
 })
