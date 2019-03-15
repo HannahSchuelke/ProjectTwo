@@ -126,6 +126,7 @@ router.get("/events/user", function (req, res) {
 
 // POST, new event
 router.post("/event/new", function (req, res) {
+    console.log("New event route hit", req.body);
     db.Event.create({
         title: req.body.title,
         date: req.body.date,
@@ -133,16 +134,18 @@ router.post("/event/new", function (req, res) {
         artist: req.body.artist,
     })
         .then(function (event) {
+            
             return db.Attendee.create({
                 UserId: req.user.id,
                 EventId: event.dataValues.id
             })
         })
         .then(function (results) {
-            console.log(results);
+            
             res.json(results);
         })
         .catch(function (err) {
+            console.log("Error:"+err)
             res.json(500, err)
         });
 });

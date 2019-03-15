@@ -160,9 +160,15 @@
     <div class="modal-content">
       <span class="close">&times;</span>
       <h2>Add your event!</h2>
-
+      
+      <!-- <input  id="title" placeholder="Event Title" />
+      <input  id="event-date" placeholder="Event Date" />
+      <input  id="event-location" placeholder="Event Location" />
+      <input id="event-artist" placeholder="Event Artist" /> -->
+     
       <div class="modal-body">
-        <form role="form" method="POST" id="insertForm" action="">
+
+        <form role="form" id="insertForm">
 
           <div class="form-group">
             <label for="event-title">Event Name</label>
@@ -183,9 +189,9 @@
             <label for="event-artist">Event Artist</label>
             <input type="artist" class="form-control" id="event-artist" placeholder="Event Artist" />
           </div>
-
-          <button type="submit" id="new-event" class="btn btn-default">Add!</button>
+          <button type='submit' class="btn btn-default">Add!</button>
         </form>
+      
       </div>
     </div>
 
@@ -209,6 +215,7 @@
         modal.style.display = "none";
       }
     }
+
   </script>
 
   <!--Add authorization token to all requests-->
