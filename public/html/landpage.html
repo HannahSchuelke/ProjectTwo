@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>LIST!N TRACKER</title>
-
-  <!-- main CSS -->
-  <link rel="stylesheet" type="text/css" href="../css/main.css">
-
-  <!-- jQuery Library -->
-  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  
-  <!-- bootstrap -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  
-  <!-- ajax min library -->
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css"> -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>LIST!N</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- jQuery link -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!--Link bootstrap-->
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+  <!--Link CSS-->
+  <link rel="stylesheet" media="screen" href="../css/main.css" />
+  <!-- fonts  -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
 </head>
 
 
@@ -21,20 +22,17 @@
 
   <!-- navbar -->
   <div class="background">
-  <div class="topnav login-container">
-    <!---- Commented this out because I'm not sure if we'll need this later?
-        <a class="active" href="#home">LIST'IN</a>-->
-    
+  <div class="topnav">
     <input type="text" placeholder="Email" id="email">
     <input type="text" placeholder="Password" id="password">
-    <button type="submit" class="login-btn" id="sign-in-button">Login</button>
+    <button type="submit" class="loginButton" id="sign-in-button">Login</button>
   </div>
 
   
-  <div class="wrapper">
-      <div class="container">
-            <img class="logoLandingPage" src="../img/logo.png">
-        
+<div class="wrapper">
+    <div class="container">
+        <img class="logoLandingPage" src="../img/logo.png">
+
 
         <h1 class="formFontBold">Experience it live.</h1>
         <p class="formFont">Create an account today.</p>
@@ -90,7 +88,7 @@
   <script type="text/javascript" src="../js/main.js"></script>
   <script type="text/javascript" src="../js/loginSignUpLogOut.js"></script>
 
-<!--Add authorization token to all requests-->
+  <!--Add authorization token to all requests-->
 <script src='../js/auth.js'></script>
 
   </body>
