@@ -14,34 +14,15 @@
 .logoLandingPage {
   display: block;
   margin-left: auto;
-  margin-right: 100px;
+  margin-right: 50px;
   margin-bottom: 50px;
   width: 60%;
   z-index: 3;
   height: auto;
 }
 
-/*.topnav .login-container button {
-  float: right;
-  font-family: 'Anton', sans-serif;
-  padding: 6px 10px;
-  margin-top: 8px;
-  margin-right: 16px;
-  border-radius: 30px;
-  background-color: transparent;
-  color: #ddd;
-  font-size: 17px;
-  border-radius: 10px;
-  cursor: pointer;
-}*/
-
-
 @media screen and (max-width: 100px) {
-  .topnav .login-container {
-    float: right;
-  }
-  .topnav a, .topnav input[type=text], .topnav .login-container button {
-    float: none;
+  .topnav {
     display: block;
     text-align: left;
     width: 100%;
@@ -50,12 +31,10 @@
   }
 }
 
-
 .wrapper {
     margin-top: 12px;
     display: flex;
     box-sizing: border-box;
-    padding: 32px 16px;
 }
 
 .wrapper > div {
@@ -65,15 +44,33 @@
     height: 700px;
 }
 
+.loginButton {
+  border-radius: 30px;
+  background-color: white;
+  padding: 16px 20px;
+  margin: 10px ;
+  cursor: pointer;
+  width: 100px;
+}
+
+.logout {
+  border-radius: 30px;
+  background-color: black;
+  color: white;
+  font-family: 'Source Sans Pro', sans-serif;
+  position: relative;
+  float: right;
+  margin-top: 80px;
+  margin-bottom: 50px;
+  margin-right: 30px;
+  margin-left: auto;
+  z-index: 1;
+  height: auto;
+}
+
 /*============================End Navigation======================================*/
 
 .profile {
-/*background-image: url('../img/concert.png');
-  background-repeat:no-repeat;
-  background-size:contain;
-  background-position:center;*/
-
-
   position: relative;
   float: right;
   margin-top: 50px;
@@ -89,33 +86,36 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 30%;
- 
- 
-  
+  width: 25%;
 }
 
+/*Styling specific to the profile page*/
 
+.populateProfile {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  text-align: center;
+  margin-top: 20px;
+}
 
-
-
-
-
-
-
+.populateMessage {
+  text-align: center;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: black;
+  font-size: 18px;
+}
 
 /* Stuff from landing page CSS*/
 
 .formFont {
-  text-align: center;
-  font-family: 'Anton', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   color: white;
   font-size: 25px;
 }
 
 .formFontBold {
-  text-align: center;
-  font-family: 'Anton', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   color: white;
   font-weight: bold;
   font-size: 50px;
@@ -166,6 +166,23 @@ input[type=text], input[type=password] {
         background-color: white;
         text-align: center;
     }
+
+    .add {
+      border-color: white;
+      display: block;
+      margin-right: 50px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 50px;
+    }
+
+
+  
+
+ 
+
+
+    
 
 
 
